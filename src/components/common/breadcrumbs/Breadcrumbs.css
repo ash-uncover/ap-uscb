@@ -1,0 +1,17 @@
+.ap-breadcrumbs {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  height: 2rem;
+  padding: 0 0.5rem;
+  & .ap-breadcrumbs-separator {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+  }
+  & .ap-breadcrumbs-item {
+    &.ap-breadcrumbs-item--linked {
+    }
+    &.ap-breadcrumbs-item--iconed {
+    }
+  }
+}
