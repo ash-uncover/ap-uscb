@@ -1,19 +1,16 @@
 import { TimeModel } from './model'
 
 export const addTimes = (times: TimeModel[]): TimeModel => {
-  const result = times.reduce((acc: TimeModel, time: TimeModel) => {
-    const [m1, s1] = acc
-    const [m2, s2] = time
-    if (s1 + s2 > 59) {
-      acc[0]++
-      acc[1] = (s1 + s2) % 60
-    } else {
-      acc[1] = s1 + s2
-    }
-    acc[0] += m2
-    return acc
-  }, [0, 0])
-  return result
+  const seconds = times
+    .map(timeToSeconds)
+    .reduce((acc, s) => acc + s, 0)
+  return secondsToTime(seconds)
+}
+
+export const avgTime = (t: TimeModel, nb: number): TimeModel => {
+  const seconds = timeToSeconds(t)
+  const avg = seconds / nb
+  return secondsToTime(avg)
 }
 
 export const timeToString = (time: TimeModel): string => {
@@ -22,6 +19,23 @@ export const timeToString = (time: TimeModel): string => {
   return `${m}:${s}`
 }
 
+export const timeToSeconds = (time: TimeModel): number => {
+  return time[0] * 60 + time[1]
+}
+export const secondsToTime = (seconds: number): TimeModel => {
+  const s = Math.round(seconds) % 60
+  const m = Math.round((Math.round(seconds) - s) / 60)
+  return [m, s]
+}
+
 export const compareTimes = (t1: TimeModel, t2: TimeModel): number => {
-  return t1[0] * 60 + t1[1] - t2[0] * 60 - t2[1]
+  return timeToSeconds(t1) - timeToSeconds(t2)
+}
+
+export const valuePerMin = (value: number, t: TimeModel): number => {
+  const s = timeToSeconds(t)
+  if (s === 0) {
+    return 0
+  }
+  return value / s * 60
 }

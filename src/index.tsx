@@ -20,9 +20,9 @@ import { store } from './store'
 import { App } from './components/App'
 import { Overview } from './components/overview/Overview'
 import { Players } from './components/players/Players'
-import { Player } from './components/players/Player'
+import { Player } from './components/players/player/Player'
 import { Matches } from './components/matches/Matches'
-import { Match } from './components/matches/Match'
+import { Match } from './components/matches/match/Match'
 
 let Router = HashRouter
 

@@ -13,7 +13,7 @@ export const AppFooter = () => {
 
   return (
     <footer className={classes.join(' ')}>
-      {'ash-uncover'}
+      {'@ash-uncover 2025'}
     </footer>
   )
   // #endregion

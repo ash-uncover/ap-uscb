@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
 import { Breadcrumbs } from './common/breadcrumbs/Breadcrumbs'
 import { BreadcrumbsItemProperties } from './common/breadcrumbs/BreadcrumbsItem'
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import { ROUTE_ITEMS } from '../lib/routes'
 
 
 interface RouteInfo {
@@ -39,33 +41,33 @@ function buildBreadcrumbsItems(route: RouteInfo) {
   switch(route.route) {
     case 'OVERVIEW': {
       return [
-        { text: 'Acceuil' }
+        ROUTE_ITEMS.OVERVIEW
       ]
     }
     case 'PLAYERS': {
       return [
-        { text: 'Acceuil', link: '/' },
-        { text: 'Players' }
+        ROUTE_ITEMS.OVERVIEW,
+        ROUTE_ITEMS.PLAYERS
       ]
     }
     case 'PLAYER': {
       return [
-        { text: 'Acceuil', link: '/' },
-        { text: 'Players', link: '/players' },
-        { text: route.param },
+        ROUTE_ITEMS.OVERVIEW,
+        ROUTE_ITEMS.PLAYERS,
+        { ...ROUTE_ITEMS.PLAYERS, text: route.param },
       ]
     }
     case 'MATCHES': {
       return [
-        { text: 'Acceuil', link: '/' },
-        { text: 'Matches' }
+        ROUTE_ITEMS.OVERVIEW,
+        ROUTE_ITEMS.MATCHS
       ]
     }
     case 'MATCH': {
       return [
-        { text: 'Acceuil', link: '/' },
-        { text: 'Matches', link: '/matches' },
-        { text: route.param },
+        ROUTE_ITEMS.OVERVIEW,
+        ROUTE_ITEMS.MATCHS,
+        { ...ROUTE_ITEMS.MATCHS, text: route.param },
       ]
     }
   }

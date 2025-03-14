@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { DataSelectors } from '../../store/data/data.selectors'
-import { PlayerOverviewModel, PlayerStat, PlayerStatTime } from '../../lib/model'
+import { PlayerModel, PlayerStat, PlayerStatTime } from '../../lib/model'
 import { addTimes, compareTimes, timeToString } from '../../lib/time'
+import { Link } from 'react-router-dom'
 
 export const Overview = () => {
 
   // #region Hooks
-  const [overview, setOverview] = useState<PlayerOverviewModel[]>([])
+  const [overview, setOverview] = useState<PlayerModel[]>([])
   const [playerStatMatch, setPlayerStatMatch] = useState<PlayerStat[]>([])
   const [playerStatTime, setPlayerStatTime] = useState<PlayerStatTime[]>([])
   const [playerStatPoints, setPlayerStatPoints] = useState<PlayerStat[]>([])
@@ -16,45 +17,45 @@ export const Overview = () => {
   const [playerStatPointsPerMin, setPlayerStatPointsPerMin] = useState<PlayerStat[]>([])
   const data = useSelector(DataSelectors.data)
   useEffect(() => {
-    const allPlayersInfo = data.map(d => d.playersA).flat()
-    setOverview(
-      allPlayersInfo
-        .reduce((acc, playerInfo) => {
-          let player: PlayerOverviewModel = acc.find(p => p.player === playerInfo.player)
-          if (!player) {
-            player = {
-              matches: 0,
-              player: playerInfo.player,
-              time: [0, 0],
-              points3: 0,
-              points2i: 0,
-              points2e: 0,
-              points1: 0,
-              fouls: 0
-            }
-            acc.push(player)
-          }
-          player.matches++
-          player.time = addTimes([player.time, playerInfo.time])
-          player.points3 += playerInfo.points3
-          player.points2e += playerInfo.points2e
-          player.points2i += playerInfo.points2i
-          player.points1 += playerInfo.points1
-          player.fouls += playerInfo.fouls
-          return acc
-        }, [])
-        .sort(
-          (p1, p2) => p1.player.localeCompare(p2.player)
-        )
-    )
+    const allPlayersInfo = data.map(d => d.players).flat()
+    // setOverview(
+    //   allPlayersInfo
+    //     .reduce((acc, playerInfo) => {
+    //       let player: PlayerModel = acc.find(p => p.player === playerInfo.player)
+    //       if (!player) {
+    //         player = {
+    //           matches: 0,
+    //           player: playerInfo.player,
+    //           time: [0, 0],
+    //           points3: 0,
+    //           points2i: 0,
+    //           points2e: 0,
+    //           points1: 0,
+    //           fouls: 0
+    //         }
+    //         acc.push(player)
+    //       }
+    //       player.matches++
+    //       player.time = addTimes([player.time, playerInfo.time])
+    //       player.points3 += playerInfo.points3
+    //       player.points2e += playerInfo.points2e
+    //       player.points2i += playerInfo.points2i
+    //       player.points1 += playerInfo.points1
+    //       player.fouls += playerInfo.fouls
+    //       return acc
+    //     }, [])
+    //     .sort(
+    //       (p1, p2) => p1.player.localeCompare(p2.player)
+    //     )
+    // )
   }, [data])
   useEffect(() => {
     setPlayerStatMatch(
       overview
-        .map((playerOverview: PlayerOverviewModel) => {
+        .map((playerOverview: PlayerModel) => {
           return {
             player: playerOverview.player,
-            value: playerOverview.matches
+            value: playerOverview.matchs
           }
         })
         .sort((s1, s2) => {
@@ -63,7 +64,7 @@ export const Overview = () => {
     )
     setPlayerStatTime(
       overview
-        .map((playerOverview: PlayerOverviewModel) => {
+        .map((playerOverview: PlayerModel) => {
           return {
             player: playerOverview.player,
             value: playerOverview.time
@@ -73,7 +74,7 @@ export const Overview = () => {
     )
     setPlayerStatPoints(
       overview
-        .map((playerOverview: PlayerOverviewModel) => {
+        .map((playerOverview: PlayerModel) => {
           return {
             player: playerOverview.player,
             value: playerOverview.points3 * 3 + playerOverview.points2e * 2 + playerOverview.points2i * 2 + playerOverview.points1
@@ -85,7 +86,7 @@ export const Overview = () => {
     )
     setPlayerStatPoints3(
       overview
-        .map((playerOverview: PlayerOverviewModel) => {
+        .map((playerOverview: PlayerModel) => {
           return {
             player: playerOverview.player,
             value: playerOverview.points3
@@ -97,10 +98,10 @@ export const Overview = () => {
     )
     setPlayerStatPointsPerMatch(
       overview
-        .map((playerOverview: PlayerOverviewModel) => {
+        .map((playerOverview: PlayerModel) => {
           return {
             player: playerOverview.player,
-            value: (playerOverview.points3 * 3 + playerOverview.points2e * 2 + playerOverview.points2i * 2 + playerOverview.points1) / playerOverview.matches
+            value: (playerOverview.points3 * 3 + playerOverview.points2e * 2 + playerOverview.points2i * 2 + playerOverview.points1) / playerOverview.matchs
           }
         })
         .sort((s1, s2) => {
@@ -109,7 +110,7 @@ export const Overview = () => {
     )
     setPlayerStatPointsPerMin(
       overview
-        .map((playerOverview: PlayerOverviewModel) => {
+        .map((playerOverview: PlayerModel) => {
           const points = playerOverview.points3 * 3 + playerOverview.points2e * 2 + playerOverview.points2i * 2 + playerOverview.points1
           const timeS = playerOverview.time[0] * 60 + playerOverview.time[1]
           return {
@@ -131,7 +132,15 @@ export const Overview = () => {
   const classes = ['ap-overview']
 
   return (
-    <div className={classes.join(' ')}>OVERVIEW</div>
+    <div className={classes.join(' ')}>
+      <div>
+        <Link to='/matches'>Matchs</Link>
+      </div>
+      <div>
+        <Link to='/players'>Joueurs</Link>
+      </div>
+      OVERVIEW
+    </div>
   )
 
   return (
@@ -163,7 +172,7 @@ export const Overview = () => {
             return (
               <tr key={player.player}>
                 <td>{player.player}</td>
-                <td>{player.matches}</td>
+                <td>{player.matchs}</td>
                 <td>{timeToString(player.time)}</td>
                 <td>{player.points3 * 3 + player.points2e * 2 + player.points2i * 2 + player.points1}</td>
                 <td>{player.points3}</td>
