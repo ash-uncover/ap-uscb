@@ -134,7 +134,7 @@ export const Overview = () => {
   return (
     <div className={classes.join(' ')}>
       <div>
-        <Link to='/matches'>Matchs</Link>
+        <Link to='/matchs'>Matchs</Link>
       </div>
       <div>
         <Link to='/players'>Joueurs</Link>

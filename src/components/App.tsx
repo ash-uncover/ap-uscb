@@ -10,6 +10,7 @@ import { AppHeader } from './AppHeader'
 import { AppFooter } from './AppFooter'
 
 import './App.css'
+import { AppNav } from './AppNav'
 
 export const App = () => {
 
@@ -51,6 +52,7 @@ export const App = () => {
       return (
         <div className={classes.join(' ')}>
           <AppHeader />
+          <AppNav />
           <main className='ap-app-main'>
             <Outlet />
           </main>

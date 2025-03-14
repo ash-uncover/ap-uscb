@@ -24,6 +24,9 @@ export interface PlayerMatchData {
 export interface GeneralModel {
   players: number
   matchs: number
+  victories: number
+  draws: number
+  defeats: number
   points: number
   fouls: number
 }
@@ -85,16 +88,20 @@ export const extractModels = (data: MatchData[]): {
   matchs: Record<string, MatchModel>,
   players: Record<string, PlayerModel>
 } => {
+  let victories = 0
+  let draws = 0
+  let defeats = 0
   const {
     matchs,
     players
   } = data.reduce(
     (acc: { matchs: Record<string, MatchModel>, players: Record<string, PlayerModel> }, matchData) => {
-      if (acc.matchs[matchData.date]) {
-        console.warn(`Match already defined '${matchData.date}', ignoring`)
+      const matchId = matchData.date.split('/').join('-')
+      if (acc.matchs[matchId]) {
+        console.warn(`Match already defined '${matchId}', ignoring`)
       }
       const matchModel = {
-        date: matchData.date,
+        date: matchId,
         teamA: matchData.teamA,
         teamB: matchData.teamB,
         scoreA: matchData.scoreA,
@@ -102,6 +109,21 @@ export const extractModels = (data: MatchData[]): {
         players: [],
         fouls: 0
       }
+      
+      if (matchData.scoreA === matchData.scoreB) {
+        draws++
+      } else if (matchData.scoreA > matchData.scoreB) {
+        if (matchData.teamA === 'USCB') {
+          victories++
+        } else {
+          defeats++
+        }
+      } else if (matchData.teamB === 'USCB') {
+        victories++
+      } else {
+        defeats++
+      }
+
       matchData.players.forEach((playerData) => {
         let playerModel = acc.players[playerData.player]
         if (!playerModel) {
@@ -142,7 +164,7 @@ export const extractModels = (data: MatchData[]): {
         playerMatchModel.pointsPerMin = valuePerMin(playerMatchModel.points, playerData.time)
         playerMatchModel.foulsPerMin = valuePerMin(playerMatchModel.fouls, playerData.time)
       })
-      acc.matchs[matchData.date] = matchModel
+      acc.matchs[matchId] = matchModel
       return acc
     },
     { matchs: {}, players: {} }
@@ -159,6 +181,9 @@ export const extractModels = (data: MatchData[]): {
   const general = {
     players: Object.keys(players).length,
     matchs: Object.keys(matchs).length,
+    victories,
+    draws,
+    defeats,
     points: Object.values(matchs).reduce((acc, match) => acc + getTeamPoints(match, 'USBC'), 0),
     fouls: Object.values(matchs).reduce((acc, match) => acc + match.fouls, 0)
   }

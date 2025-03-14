@@ -1,10 +1,13 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 import './Player.css'
 
 export const Player = () => {
 
   // #region Hooks
+  const playerId = useParams().playerId
+  // #endregion
 
   // #region Callbacks
   // #endregion
@@ -14,7 +17,7 @@ export const Player = () => {
 
   return (
     <div className={classes.join(' ')}>
-      PLAYER
+      Joueur {playerId}
     </div>
   )
   // #endregion

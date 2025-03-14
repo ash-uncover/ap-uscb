@@ -9,11 +9,11 @@ export const ROUTE_ITEMS = {
   PLAYERS: { 
     icon: ['fas', 'user'] as IconProp,
     link: '/players',
-    text: 'Players'
+    text: 'Joueurs'
   },
   MATCHS: { 
     icon: ['fas', 'basketball'] as IconProp,
-    text: 'Matches', 
-    link: '/matches' 
+    text: 'Matchs', 
+    link: '/matchs' 
   }
 }

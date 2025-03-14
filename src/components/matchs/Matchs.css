@@ -1,0 +1,28 @@
+.ap-matchs {
+  & .ap-title {
+    width: 100%;
+    text-align: center;
+  }
+
+  & .ap-matchs-tiles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
+
+  & .ap-matchs-table {
+    width: 100%;
+    & .ap-matchs-table-row {
+      cursor: pointer;
+      & .ap-matchs-table-cell--date {
+        font-size: 0.8rem;
+      }
+      & .score {
+        display: inline-block;
+        width: 30px;
+      }
+    }
+  }
+}

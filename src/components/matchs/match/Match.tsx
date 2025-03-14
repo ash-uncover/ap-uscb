@@ -1,10 +1,13 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 import './Match.css'
 
 export const Match = () => {
 
   // #region Hooks
+  const matchId = useParams().matchId
+  // #endregion
 
   // #region Callbacks
   // #endregion
@@ -14,7 +17,7 @@ export const Match = () => {
 
   return (
     <div className={classes.join(' ')}>
-      MATCH
+      MATCH {matchId}
     </div>
   )
   // #endregion

@@ -1,12 +1,12 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
 
 import { DataSelectors } from '../../store/data/data.selectors'
 
-import './Players.css'
 import { PlayersTable } from './PlayersTable'
 import { PlayerTableRow } from './PlayersTableRow'
+
+import './Players.css'
 
 export const Players = () => {
 

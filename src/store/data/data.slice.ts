@@ -14,6 +14,9 @@ const initialState: DataModel = {
   general: {
     players: 0,
     matchs: 0,
+    victories: 0,
+    draws: 0,
+    defeats: 0,
     points: 0,
     fouls: 0,
   },

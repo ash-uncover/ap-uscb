@@ -1,10 +1,31 @@
 .ap-app {
   height: 100%;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
 
   & .ap-app-header {
+    height: 2.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: #EEE;
+    color: #004A7F;
+    &::before {
+      content: ' ';
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      left: -15px;
+      right: -15px;
+      box-shadow: -15px 0px 3px 0px #AAA, 15px 0px 3px 0px #AAA;
+    }
+  }
+
+  & .ap-app-nav {
     flex-shrink: 0;
     flex-grow: 0;
   }

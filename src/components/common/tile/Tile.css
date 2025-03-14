@@ -1,0 +1,59 @@
+.ap-tile {
+  height: 7rem;
+  width: 7rem;
+  border: 1px solid #DDD;
+  border-radius: 0.5rem;
+  box-shadow: 1px 2px 2px #EEE;
+  padding: 0.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  user-select: none;
+
+  &.ap-tile--clickable {
+    cursor: pointer;
+    pointer-events: all;
+  }
+
+  & .ap-tile-layer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.5rem;
+  }
+
+  & .ap-tile-background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.3;
+    height: 6rem;
+
+    & .ap-tile-icon {
+      font-size: 5rem;
+      color: #9ED7E2;
+    }
+  }
+
+  & .ap-tile-content {
+
+    & .ap-tile-text {
+      font-size: 3.5rem;
+      font-weight: bold;
+      height: 6rem;
+      line-height: 6rem;
+      text-align: center;
+    }
+
+    & .ap-tile-desc {
+      height: 1rem;
+      color: #999;
+      font-style: italic;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+  }
+}

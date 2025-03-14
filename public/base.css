@@ -5,4 +5,23 @@ body,
   height: 100%;
   width: 100%;
   overflow: hidden;
+  font-family: Roboto;
+}
+
+.ap-table {
+  border-collapse: collapse;
+  & tbody {
+    & tr:nth-child(odd) {
+      background: #EEE;
+    }
+    & td {
+      padding: 0.5rem 0.25rem;
+    }
+    & td:first-child {
+      padding-inline-start: 1rem;
+    }
+    & td:last-child {
+      padding-inline-end: 1rem;
+    }
+  }
 }

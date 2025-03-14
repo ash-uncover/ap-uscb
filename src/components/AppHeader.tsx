@@ -1,92 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { useLocation, useParams } from 'react-router-dom'
-import { Breadcrumbs } from './common/breadcrumbs/Breadcrumbs'
-import { BreadcrumbsItemProperties } from './common/breadcrumbs/BreadcrumbsItem'
-import { IconProp } from '@fortawesome/fontawesome-svg-core'
-import { ROUTE_ITEMS } from '../lib/routes'
-
-
-interface RouteInfo {
-  route: string
-  param?: string
-}
-function resolveRoute(path: string, params: any): RouteInfo {
-  if (params.playerId) {
-    return {
-      route: 'PLAYER',
-      param: params.playerId
-    }
-  }
-  if (params.matchId) {
-    return {
-      route: 'MATCH',
-      param: params.matchId
-    }
-  }
-  if (path.startsWith('/players')) {
-    return {
-      route: 'PLAYERS'
-    }
-  }
-  if (path.startsWith('/matches')) {
-    return {
-      route: 'MATCHES'
-    }
-  }
-  return {
-    route: 'OVERVIEW'
-  }
-}
-function buildBreadcrumbsItems(route: RouteInfo) {
-  switch(route.route) {
-    case 'OVERVIEW': {
-      return [
-        ROUTE_ITEMS.OVERVIEW
-      ]
-    }
-    case 'PLAYERS': {
-      return [
-        ROUTE_ITEMS.OVERVIEW,
-        ROUTE_ITEMS.PLAYERS
-      ]
-    }
-    case 'PLAYER': {
-      return [
-        ROUTE_ITEMS.OVERVIEW,
-        ROUTE_ITEMS.PLAYERS,
-        { ...ROUTE_ITEMS.PLAYERS, text: route.param },
-      ]
-    }
-    case 'MATCHES': {
-      return [
-        ROUTE_ITEMS.OVERVIEW,
-        ROUTE_ITEMS.MATCHS
-      ]
-    }
-    case 'MATCH': {
-      return [
-        ROUTE_ITEMS.OVERVIEW,
-        ROUTE_ITEMS.MATCHS,
-        { ...ROUTE_ITEMS.MATCHS, text: route.param },
-      ]
-    }
-  }
-}
+import React from 'react'
 
 export const AppHeader = () => {
 
   // #region Hooks
-  const [route, setRoute] = useState<RouteInfo>({ route: 'OVERVIEW' })
-  const [breadcrumbsItems, setBreadcrumbsItems] = useState<BreadcrumbsItemProperties[]>([])
-  const location = useLocation()
-  const params = useParams()
-  useEffect(() => {
-    const newRoute = resolveRoute(location.pathname, params)
-    setRoute(newRoute)
-  }, [location, params])
-  useEffect(() => {
-    setBreadcrumbsItems(buildBreadcrumbsItems(route))
-  }, [route])
   // #endregion
 
   // #region Callbacks
@@ -97,7 +13,9 @@ export const AppHeader = () => {
 
   return (
     <header className={classes.join(' ')}>
-      <Breadcrumbs items={breadcrumbsItems} />
+      <img height='90%' src='/logo.png' />
+      <span style={{marginTop: '0.25rem'}}>US Conflans - Basket-ball</span>
+      <img height='90%' src='/logo.png' />
     </header>
   )
   // #endregion

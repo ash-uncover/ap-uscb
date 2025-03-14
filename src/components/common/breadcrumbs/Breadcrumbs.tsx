@@ -1,17 +1,18 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { BreadcrumbsItem, BreadcrumbsItemProperties } from './BreadcrumbsItem'
 
 import './Breadcrumbs.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export interface BreadcrumbsProperties {
+  className?: string
   items: BreadcrumbsItemProperties[]
-  separator?: string
 }
 
 export const Breadcrumbs = ({
-  items,
-  separator
+  className,
+  items
 }: BreadcrumbsProperties) => {
 
   // #region Hooks
@@ -22,7 +23,9 @@ export const Breadcrumbs = ({
 
   // #region Rendering
   const classes = ['ap-breadcrumbs']
-
+  if (className) {
+    classes.push(className)
+  }
   return (
     <nav className={classes.join(' ')}>
       {items.map(
