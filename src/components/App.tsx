@@ -6,11 +6,11 @@ import { DataStates } from '@uncover/js-utils'
 import { loadData } from '../services/DataService'
 import { DataSelectors } from '../store/data/data.selectors'
 
-import { AppHeader } from './AppHeader'
 import { AppFooter } from './AppFooter'
+import { AppHeader } from './AppHeader'
+import { AppNav } from './AppNav'
 
 import './App.css'
-import { AppNav } from './AppNav'
 
 export const App = () => {
 

@@ -3,10 +3,10 @@ import { addTimes, avgTime, valuePerMin } from "./time"
 // #region Data
 export interface MatchData {
   date: string
-  teamA: string
-  teamB: string
-  scoreA: number
-  scoreB: number
+  score: number
+  home: boolean
+  opponent: string
+  scoreOpponent: number
   players: PlayerMatchData[]
 }
 export interface PlayerMatchData {
@@ -35,10 +35,10 @@ export interface GeneralModel {
 // #region Match
 export interface MatchModel {
   date: string
-  teamA: string
-  teamB: string
-  scoreA: number
-  scoreB: number
+  home: boolean
+  opponent: string
+  score: number
+  scoreOpponent: number
   players: PlayerMatchModel[]
   fouls: number
 }
@@ -73,16 +73,6 @@ export interface PlayerStatTime {
 }
 // #endregion
 
-export const getTeamPoints = (data: MatchData, team: string): number => {
-  if (data.teamA === team) {
-    return data.scoreA
-  }
-  if (data.teamB === team) {
-    return data.scoreB
-  }
-  return 0
-}
-
 export const extractModels = (data: MatchData[]): {
   general: GeneralModel,
   matchs: Record<string, MatchModel>,
@@ -102,24 +92,18 @@ export const extractModels = (data: MatchData[]): {
       }
       const matchModel = {
         date: matchId,
-        teamA: matchData.teamA,
-        teamB: matchData.teamB,
-        scoreA: matchData.scoreA,
-        scoreB: matchData.scoreB,
+        score: matchData.score,
+        home: matchData.home,
+        opponent: matchData.opponent,
+        scoreOpponent: matchData.scoreOpponent,
         players: [],
         fouls: 0
       }
       
-      if (matchData.scoreA === matchData.scoreB) {
+      if (matchData.score === matchData.scoreOpponent) {
         draws++
-      } else if (matchData.scoreA > matchData.scoreB) {
-        if (matchData.teamA === 'USCB') {
+      } else if (matchData.score > matchData.scoreOpponent) {
           victories++
-        } else {
-          defeats++
-        }
-      } else if (matchData.teamB === 'USCB') {
-        victories++
       } else {
         defeats++
       }
@@ -163,6 +147,7 @@ export const extractModels = (data: MatchData[]): {
         }
         playerMatchModel.pointsPerMin = valuePerMin(playerMatchModel.points, playerData.time)
         playerMatchModel.foulsPerMin = valuePerMin(playerMatchModel.fouls, playerData.time)
+        matchModel.players.push(playerMatchModel)
       })
       acc.matchs[matchId] = matchModel
       return acc
@@ -184,7 +169,7 @@ export const extractModels = (data: MatchData[]): {
     victories,
     draws,
     defeats,
-    points: Object.values(matchs).reduce((acc, match) => acc + getTeamPoints(match, 'USBC'), 0),
+    points: Object.values(matchs).reduce((acc, match) => acc + match.score, 0),
     fouls: Object.values(matchs).reduce((acc, match) => acc + match.fouls, 0)
   }
 

@@ -22,6 +22,11 @@ export const MatchTableRow = ({
   // #region Rendering
   const classes = ['ap-matchs-table-row']
 
+  const teamL = match.home ? 'USCB' : match.opponent
+  const scoreL = match.home ? match.score : match.scoreOpponent
+  const teamV = match.home ? match.opponent: 'USCB'
+  const scoreV = match.home ? match.scoreOpponent : match.score
+
   return (
     <tr 
       className={classes.join(' ')}
@@ -31,11 +36,11 @@ export const MatchTableRow = ({
         <Link to={`/matchs/${matchId}`}>{matchId}</Link>
       </td>
       <td style={{ textAlign: 'end' }}>
-        {match.teamA} <span className='score'>{match.scoreA}</span>
+        {teamL} <span className='score'>{scoreL}</span>
       </td>
       <td>-</td>
       <td>
-         <span className='score'>{match.scoreB}</span> {match.teamB}
+         <span className='score'>{scoreV}</span> {teamV}
       </td>
     </tr>
   )

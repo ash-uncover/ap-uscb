@@ -58,6 +58,9 @@ export const Matchs = () => {
       >
         Tous les Matchs
       </Title>
+      <div className='ap-matchs-description'>
+        Sélectionner un match pour accéder à la feuille de match
+      </div>
       <MatchsTable>
         {Object.keys(matchs).sort((m1, m2) => m1.localeCompare(m2)).map(match => {
           return (

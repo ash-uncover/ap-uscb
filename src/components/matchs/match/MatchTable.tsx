@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const PlayersTable = ({
+export const MatchTable = ({
   children
 }) => {
 
@@ -11,14 +11,14 @@ export const PlayersTable = ({
   // #endregion
 
   // #region Rendering
-  const classes = ['ap-players-table ap-table']
+  const classes = ['ap-match-table ap-table']
 
   return (
     <table className={classes.join(' ')}>
       <thead>
         <tr>
           <th>Joueur</th>
-          <th>Matchs</th>
+          <th>Temps</th>
           <th>Points</th>
         </tr>
       </thead>

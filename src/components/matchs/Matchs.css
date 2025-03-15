@@ -1,7 +1,11 @@
 .ap-matchs {
-  & .ap-title {
-    width: 100%;
+
+  & .ap-matchs-description {
+    font-style: italic;
     text-align: center;
+    font-size: 0.85rem;
+    color: #AAA;
+    margin-bottom: 1rem;
   }
 
   & .ap-matchs-tiles {
@@ -10,6 +14,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 3rem;
+    margin-bottom: 2rem;
   }
 
   & .ap-matchs-table {
