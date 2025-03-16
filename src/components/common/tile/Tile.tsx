@@ -3,11 +3,13 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import './Tile.css'
+import { TileSize, TileSizes } from './TileSize'
 
 export interface TileProperties {
   text: string
   desc?: string
   icon?: IconProp
+  size?: TileSize
   onClick?: () => void
 }
 
@@ -15,6 +17,7 @@ export const Tile = ({
   text,
   desc,
   icon,
+  size,
   onClick
 }: TileProperties) => {
 
@@ -39,6 +42,20 @@ export const Tile = ({
   }
   if (onClick) {
     classes.push('ap-tile--clickable')
+  }
+  switch(size) {
+    case TileSizes.S: {
+      classes.push('ap-tile--s')
+      break
+    }
+    case TileSizes.M: {
+      classes.push('ap-tile--m')
+      break
+    }
+    case TileSizes.L:
+    default: {
+      break
+    }
   }
 
   return (

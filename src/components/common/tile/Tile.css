@@ -65,4 +65,20 @@
       text-align: center;
     }
   }
+
+  &.ap-tile--s {
+    & .ap-tile-content {
+      & .ap-tile-text {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &.ap-tile--m {
+    & .ap-tile-content {
+      & .ap-tile-text {
+        font-size: 2.5rem;
+      }
+    }
+  }
 }
