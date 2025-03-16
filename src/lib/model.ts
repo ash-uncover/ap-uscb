@@ -31,6 +31,7 @@ export interface GeneralModel {
   defeats: number
   points: number
   fouls: number
+  playersPerMatch: number
 }
 // #endregion
 
@@ -83,6 +84,7 @@ export const extractModels = (data: MatchData[]): {
   let victories = 0
   let draws = 0
   let defeats = 0
+  let playersPerMatch = 0
   const {
     matchs,
     players
@@ -91,6 +93,7 @@ export const extractModels = (data: MatchData[]): {
       const matchId = matchData.date.split('/').join('-')
       if (acc.matchs[matchId]) {
         console.warn(`Match already defined '${matchId}', ignoring`)
+        return acc
       }
       const matchModel = {
         date: matchId,
@@ -109,7 +112,7 @@ export const extractModels = (data: MatchData[]): {
       } else {
         defeats++
       }
-
+      playersPerMatch += matchData.players.length
       matchData.players.forEach((playerData) => {
         let playerModel = acc.players[playerData.player]
         if (!playerModel) {
@@ -172,7 +175,8 @@ export const extractModels = (data: MatchData[]): {
     draws,
     defeats,
     points: Object.values(matchs).reduce((acc, match) => acc + match.score, 0),
-    fouls: Object.values(matchs).reduce((acc, match) => acc + match.fouls, 0)
+    fouls: Object.values(matchs).reduce((acc, match) => acc + match.fouls, 0),
+    playersPerMatch: playersPerMatch / Object.keys(matchs).length
   }
 
   return {

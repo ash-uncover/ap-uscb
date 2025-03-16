@@ -19,6 +19,7 @@ const initialState: DataModel = {
     defeats: 0,
     points: 0,
     fouls: 0,
+    playersPerMatch: 0,
   },
   matchs: {},
   players: {}
