@@ -39,7 +39,7 @@ export const MatchTableRow = ({
       <td style={{ textAlign: 'end' }}>
         {teamL} <span className='score'>{scoreL}</span>
       </td>
-      <td>-</td>
+      <td style={{ textAlign: 'center' }}>-</td>
       <td>
          <span className='score'>{scoreV}</span> {teamV}
       </td>
