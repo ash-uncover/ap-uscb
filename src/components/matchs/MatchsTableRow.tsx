@@ -27,6 +27,7 @@ export const MatchTableRow = ({
   const scoreL = match.home ? match.score : match.scoreOpponent
   const teamV = match.home ? match.opponent : TEAM
   const scoreV = match.home ? match.scoreOpponent : match.score
+  const winL = match.home ? (match.score > match.scoreOpponent) : (match.score < match.scoreOpponent)
 
   return (
     <tr
@@ -36,12 +37,12 @@ export const MatchTableRow = ({
       <td className='ap-matchs-table-cell--date'>
         <Link to={`/matchs/${matchId}`}>{matchId}</Link>
       </td>
-      <td style={{ textAlign: 'end' }}>
+      <td style={{ textAlign: 'end', fontWeight: winL ? 'bold' : 'normal' }}>
         <div>{teamL}</div>
         <div className='score'>{scoreL}</div>
       </td>
       <td style={{ textAlign: 'center' }}>-</td>
-      <td>
+      <td style={{ fontWeight: winL ? 'normal' : 'bold' }}>
         <div>{teamV}</div>
         <div className='score'>{scoreV}</div> 
       </td>
