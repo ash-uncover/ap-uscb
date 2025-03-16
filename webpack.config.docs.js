@@ -27,7 +27,7 @@ module.exports = merge(base, {
       favicon: './public/logo_32.png',
       template: './src/index_docs.html',
       title: 'AP USCB',
-      publicPath: '/ap-usbc'
+      publicPath: '/ap-uscb'
     }),
     new CopyPlugin({
       patterns: [{
@@ -36,8 +36,8 @@ module.exports = merge(base, {
       }],
     }),
     new webpack.EnvironmentPlugin({
-      AP_USBC_PUBLIC: '/ap-usbc',
-      AP_USBC_ENVIRONMENT: 'github',
+      AP_USCB_PUBLIC: '/ap-uscb',
+      AP_USCB_ENVIRONMENT: 'github',
     }),
   ]
 })

@@ -8,6 +8,7 @@ import {
 import {
   Route,
   Routes,
+  BrowserRouter,
   HashRouter,
   Navigate,
 } from 'react-router-dom'
@@ -23,8 +24,12 @@ import { Players } from './components/players/Players'
 import { Player } from './components/players/player/Player'
 import { Matchs } from './components/matchs/Matchs'
 import { Match } from './components/matchs/match/Match'
+import { CONFIG } from './config'
 
-let Router = HashRouter
+let Router = BrowserRouter
+if (CONFIG.AP_USCB_ENVIRONMENT === 'github') {
+  Router = HashRouter
+}
 
 const containerRoot = document.getElementById('reactroot')!
 const root = createRoot(containerRoot)
