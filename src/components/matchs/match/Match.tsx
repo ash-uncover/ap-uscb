@@ -24,8 +24,6 @@ export const Match = () => {
   // #region Rendering
   const classes = ['ap-match']
 
-  console.log('in match', match.players.slice())
-
   return (
     <div className={classes.join(' ')}>
       <Title

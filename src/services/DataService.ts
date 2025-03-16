@@ -5,7 +5,6 @@ export const loadData = async (dispatch: any) => {
   return fetch('./data.json')
     .then(response => response.json())
     .then((data: any) => {
-      console.log(data)
       dispatch(DataSlice.actions.getDataSuccess(data))
     })
     .catch((error) => {

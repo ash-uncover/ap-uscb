@@ -1,4 +1,5 @@
 import React from 'react'
+import { CONFIG } from '../config'
 
 export const AppHeader = () => {
 
@@ -13,9 +14,19 @@ export const AppHeader = () => {
 
   return (
     <header className={classes.join(' ')}>
-      <img height='90%' src='/logo.png' />
-      <span style={{marginTop: '0.25rem'}}>US Conflans - Basket-ball</span>
-      <img height='90%' src='/logo.png' />
+      <img
+        height='90%'
+        src={`${CONFIG.AP_USCB_PUBLIC}/logo.png`}
+      />
+      <span
+        style={{ marginTop: '0.25rem' }}
+      >
+        US Conflans - Basket-ball
+      </span>
+      <img
+        height='90%'
+        src={`${CONFIG.AP_USCB_PUBLIC}/logo.png`}
+      />
     </header>
   )
   // #endregion
