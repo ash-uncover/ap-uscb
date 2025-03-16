@@ -25,11 +25,11 @@ export const MatchTableRow = ({
 
   const teamL = match.home ? TEAM : match.opponent
   const scoreL = match.home ? match.score : match.scoreOpponent
-  const teamV = match.home ? match.opponent: TEAM
+  const teamV = match.home ? match.opponent : TEAM
   const scoreV = match.home ? match.scoreOpponent : match.score
 
   return (
-    <tr 
+    <tr
       className={classes.join(' ')}
       onClick={handleClick}
     >
@@ -37,11 +37,13 @@ export const MatchTableRow = ({
         <Link to={`/matchs/${matchId}`}>{matchId}</Link>
       </td>
       <td style={{ textAlign: 'end' }}>
-        {teamL} <span className='score'>{scoreL}</span>
+        <div>{teamL}</div>
+        <div className='score'>{scoreL}</div>
       </td>
       <td style={{ textAlign: 'center' }}>-</td>
       <td>
-         <span className='score'>{scoreV}</span> {teamV}
+        <div>{teamV}</div>
+        <div className='score'>{scoreV}</div> 
       </td>
     </tr>
   )
