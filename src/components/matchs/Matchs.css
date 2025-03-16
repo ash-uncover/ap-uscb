@@ -9,11 +9,6 @@
   }
 
   & .ap-matchs-tiles {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 3rem;
     margin-bottom: 2rem;
   }
 

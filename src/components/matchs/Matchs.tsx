@@ -39,7 +39,7 @@ export const Matchs = () => {
       >
         Statistiques
       </Title>
-      <div className='ap-matchs-tiles'>
+      <div className='ap-matchs-tiles ap-tiles'>
         <Tile
           text={`${Object.values(matchs).length}`}
           desc='Matchs joués'

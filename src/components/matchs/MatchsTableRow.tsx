@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 
+import { TEAM } from '../../lib/model'
 import { DataSelectors } from '../../store/data/data.selectors'
 
 export const MatchTableRow = ({
@@ -22,9 +23,9 @@ export const MatchTableRow = ({
   // #region Rendering
   const classes = ['ap-matchs-table-row']
 
-  const teamL = match.home ? 'USCB' : match.opponent
+  const teamL = match.home ? TEAM : match.opponent
   const scoreL = match.home ? match.score : match.scoreOpponent
-  const teamV = match.home ? match.opponent: 'USCB'
+  const teamV = match.home ? match.opponent: TEAM
   const scoreV = match.home ? match.scoreOpponent : match.score
 
   return (

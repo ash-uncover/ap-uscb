@@ -1,3 +1,21 @@
 .ap-overview {
-  
+
+  & .ap-overview-table {
+    & .table-cell--rank,
+    & .table-head-cell--rank {
+      width: 2rem;
+    }
+    & .table-cell--stat,
+    & .table-head-cell--stat {
+      text-align: right;
+    }
+  }
+
+  & .ap-overview-table-button-more {
+    margin-top: 0.25rem; 
+    margin-right: 0.5rem;
+    border: none;
+    line-height: 2rem;
+    height: 2rem;
+  }
 }

@@ -16,6 +16,18 @@ body,
 .ap-table {
   border-collapse: collapse;
   width: 100%;
+  & tr {
+    & th {
+      text-align: left;
+      padding: 0.5rem 0.25rem;
+    }
+    & th:first-child {
+      padding-inline-start: 1rem;
+    }
+    & th:last-child {
+      padding-inline-end: 1rem;
+    }
+  }
   & tbody {
     & tr:nth-child(odd) {
       background: #EEE;

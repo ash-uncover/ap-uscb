@@ -1,4 +1,33 @@
 .ap-match {
+  & .ap-match-result {
+    display: flex;
+    gap: 1rem;
+    & .ap-match-result-side {
+      width: 0;
+      flex-grow: 1;
+      text-align: right;
+
+      & + .ap-match-result-side {
+        text-align: left;
+      }
+
+      &.ap-match-result-side--winner {
+        font-weight: bold;
+      }
+
+      & .ap-match-result-team {
+        font-size: 1.2rem;
+      }
+      & .ap-match-result-score {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  & .ap-match-tiles {
+    margin-bottom: 2rem;
+  }
+
   & .ap-match-table {
     & thead {
       & th {

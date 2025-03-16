@@ -1,3 +1,11 @@
+.ap-tiles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
 .ap-tile {
   height: 7rem;
   width: 7rem;
@@ -46,6 +54,7 @@
       height: 6rem;
       line-height: 6rem;
       text-align: center;
+      color: black !important;
     }
 
     & .ap-tile-desc {

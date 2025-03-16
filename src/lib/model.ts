@@ -1,5 +1,7 @@
 import { addTimes, avgTime, valuePerMin } from "./time"
 
+export const TEAM = 'Conflans'
+
 // #region Data
 export interface MatchData {
   date: string

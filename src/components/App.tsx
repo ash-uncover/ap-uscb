@@ -6,7 +6,6 @@ import { DataStates } from '@uncover/js-utils'
 import { loadData } from '../services/DataService'
 import { DataSelectors } from '../store/data/data.selectors'
 
-import { AppFooter } from './AppFooter'
 import { AppHeader } from './AppHeader'
 import { AppNav } from './AppNav'
 
@@ -52,11 +51,10 @@ export const App = () => {
       return (
         <div className={classes.join(' ')}>
           <AppHeader />
-          <AppNav />
           <main className='ap-app-main'>
             <Outlet />
           </main>
-          <AppFooter />
+          <AppNav />
         </div>
       )
     }

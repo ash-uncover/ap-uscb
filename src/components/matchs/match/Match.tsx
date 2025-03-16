@@ -5,9 +5,12 @@ import { useParams } from 'react-router-dom'
 import { Title } from '../../common/title/Title'
 import { TitleLevels } from '../../common/title/TitleLevels'
 import { DataSelectors } from '../../../store/data/data.selectors'
+import { Tile } from '../../common/tile/Tile'
+import { TEAM } from '../../../lib/model'
 
 import { MatchTable } from './MatchTable'
 import { MatchTablePlayerRow } from './MatchTablePlayerRow'
+import { MatchResult } from './MatchResult'
 
 import './Match.css'
 
@@ -39,8 +42,32 @@ export const Match = () => {
       >
         Résultat
       </Title>
+      <MatchResult 
+        team1={match.home ? TEAM : match.opponent}
+        score1={match.home ? match.score : match.scoreOpponent}
+        team2={match.home ? match.opponent : TEAM}
+        score2={match.home ? match.scoreOpponent : match.score}
+      />
 
-      <div></div>
+      <Title
+        level={TitleLevels.H2}
+        size={TitleLevels.H2}
+      >
+        Statistiques
+      </Title>
+
+      <div className='ap-match-tiles ap-tiles'>
+        <Tile
+          text={`${match.score}`}
+          desc='Points marqués'
+          icon={['fas', 'basketball']}
+        />
+        <Tile
+          text={`${match.players.length}`}
+          desc='Joueurs'
+          icon={['fas', 'users']}
+        />
+      </div>
 
       <Title
         level={TitleLevels.H2}

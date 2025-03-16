@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { DataSelectors } from '../../../store/data/data.selectors'
 import { PlayerMatchModel } from '../../../lib/model'
@@ -39,7 +39,7 @@ export const MatchTablePlayerRow = ({
         onClick={handleClick}
       >
         <td>
-          {player.player}
+          <Link to={`/players/${player.player}`}>{player.player}</Link>
         </td>
         <td>
           {timeToString(player.time)}

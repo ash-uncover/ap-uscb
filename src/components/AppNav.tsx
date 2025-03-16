@@ -1,73 +1,41 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation, useParams } from 'react-router-dom'
-import { Breadcrumbs } from './common/breadcrumbs/Breadcrumbs'
-import { BreadcrumbsItemProperties } from './common/breadcrumbs/BreadcrumbsItem'
-import { IconProp } from '@fortawesome/fontawesome-svg-core'
+
+import { NavMenu } from './common/navmenu/NavMenu'
 import { ROUTE_ITEMS } from '../lib/routes'
+import { NavMenuItemProperties } from './common/navmenu/NavMenuItem'
+import { useLocation } from 'react-router-dom'
 
-
-interface RouteInfo {
-  route: string
-  param?: string
-}
-function resolveRoute(path: string, params: any): RouteInfo {
-  if (params.playerId) {
-    return {
-      route: 'PLAYER',
-      param: params.playerId
-    }
-  }
-  if (params.matchId) {
-    return {
-      route: 'MATCH',
-      param: params.matchId
-    }
-  }
+function resolveRoute(path: string): string {
   if (path.startsWith('/players')) {
-    return {
-      route: 'PLAYERS'
-    }
+    return 'PLAYERS'
   }
   if (path.startsWith('/matchs')) {
-    return {
-      route: 'MATCHS'
-    }
+    return 'MATCHS'
   }
-  return {
-    route: 'OVERVIEW'
-  }
+  return 'OVERVIEW'
 }
-function buildBreadcrumbsItems(route: RouteInfo) {
-  switch(route.route) {
+
+function buildNavMenuItems(route: string) {
+  switch (route) {
     case 'OVERVIEW': {
       return [
-        ROUTE_ITEMS.OVERVIEW
+        { ...ROUTE_ITEMS.OVERVIEW, selected: true },
+        { ...ROUTE_ITEMS.MATCHS },
+        { ...ROUTE_ITEMS.PLAYERS }
       ]
     }
     case 'PLAYERS': {
       return [
-        ROUTE_ITEMS.OVERVIEW,
-        ROUTE_ITEMS.PLAYERS
-      ]
-    }
-    case 'PLAYER': {
-      return [
-        ROUTE_ITEMS.OVERVIEW,
-        ROUTE_ITEMS.PLAYERS,
-        { ...ROUTE_ITEMS.PLAYERS, text: route.param },
+        { ...ROUTE_ITEMS.OVERVIEW },
+        { ...ROUTE_ITEMS.MATCHS },
+        { ...ROUTE_ITEMS.PLAYERS, selected: true }
       ]
     }
     case 'MATCHS': {
       return [
-        ROUTE_ITEMS.OVERVIEW,
-        ROUTE_ITEMS.MATCHS
-      ]
-    }
-    case 'MATCH': {
-      return [
-        ROUTE_ITEMS.OVERVIEW,
-        ROUTE_ITEMS.MATCHS,
-        { ...ROUTE_ITEMS.MATCHS, text: route.param },
+        { ...ROUTE_ITEMS.OVERVIEW },
+        { ...ROUTE_ITEMS.MATCHS, selected: true },
+        { ...ROUTE_ITEMS.PLAYERS }
       ]
     }
   }
@@ -76,17 +44,17 @@ function buildBreadcrumbsItems(route: RouteInfo) {
 export const AppNav = () => {
 
   // #region Hooks
-  const [route, setRoute] = useState<RouteInfo>({ route: 'OVERVIEW' })
-  const [breadcrumbsItems, setBreadcrumbsItems] = useState<BreadcrumbsItemProperties[]>([])
+  const [route, setRoute] = useState<string>('OVERVIEW')
+  const [navmenuItems, setNavmenuItems] = useState<NavMenuItemProperties[]>([])
   const location = useLocation()
-  const params = useParams()
   useEffect(() => {
-    const newRoute = resolveRoute(location.pathname, params)
-    setRoute(newRoute)
-  }, [location, params])
-  useEffect(() => {
-    setBreadcrumbsItems(buildBreadcrumbsItems(route))
-  }, [route])
+      const newRoute = resolveRoute(location.pathname)
+      setRoute(newRoute)
+    }, [location])
+    useEffect(() => {
+      setNavmenuItems(buildNavMenuItems(route))
+    }, [route])
+    // #endregion
   // #endregion
 
   // #region Callbacks
@@ -96,10 +64,11 @@ export const AppNav = () => {
   const classes = ['ap-app-nav']
 
   return (
-    <Breadcrumbs 
-      className={classes.join(' ')}
-      items={breadcrumbsItems} 
-    />
+    <footer className={classes.join(' ')}>
+      <NavMenu
+        items={navmenuItems}
+      />
+    </footer>
   )
   // #endregion
 }
