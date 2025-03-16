@@ -5,6 +5,8 @@ const path = require('path')
 const DIR_SRC = path.resolve(__dirname, 'src')
 const DIR_NODE_MODULES = path.resolve(__dirname, 'node_modules')
 
+const CopyPlugin = require('copy-webpack-plugin')
+
 module.exports = {
   entry: path.resolve(DIR_SRC, 'index.tsx'),
 
@@ -12,6 +14,15 @@ module.exports = {
     modules: ['node_modules', './src'],
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
+
+  plugins: [
+    new CopyPlugin({
+      patterns: [{
+        from: path.resolve(__dirname, '_redirects'),
+        to: '.',
+      }]
+    }),
+  ],
 
   module: {
     rules: [

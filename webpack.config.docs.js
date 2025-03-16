@@ -1,12 +1,15 @@
 /* eslint-disable */
 
+const webpack = require('webpack')
 const path = require('path')
 
 const { merge } = require('webpack-merge')
 const base = require('./webpack.config.base.js')
 
 const DIR_DOCS = path.resolve(__dirname, 'docs')
+const DIR_PUBLIC = path.resolve(__dirname, 'public')
 
+const CopyPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = merge(base, {
@@ -23,7 +26,18 @@ module.exports = merge(base, {
     new HtmlWebpackPlugin({
       favicon: './public/logo_32.png',
       template: './src/index_docs.html',
-      title: 'AP USCB'
-    })
+      title: 'AP USCB',
+      publicPath: '/ap-usbc'
+    }),
+    new CopyPlugin({
+      patterns: [{
+        from: DIR_PUBLIC,
+        to: '.',
+      }],
+    }),
+    new webpack.EnvironmentPlugin({
+      AP_USBC_PUBLIC: '/ap-usbc',
+      AP_USBC_ENVIRONMENT: 'github',
+    }),
   ]
 })

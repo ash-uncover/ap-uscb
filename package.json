@@ -6,7 +6,7 @@
   "license": "ISC",
   "private": "true",
   "scripts": {
-    "build": "webpack --config webpack.config.prod.js --mode production",
+    "build": "webpack --config webpack.config.docs.js --mode production",
     "build:dev": "webpack --config webpack.config.dev.js",
     "start:dev": "webpack serve --config webpack.config.dev.js --progress",
     "test": "jest",
