@@ -1,4 +1,4 @@
-import { addTimes, avgTime, valuePerMin } from "./time"
+import { addTimes, avgTime, timeToSeconds, timeToString, valuePerMin } from "./time"
 
 export const TEAM = 'Conflans'
 
@@ -113,6 +113,8 @@ export const extractModels = (data: MatchData[]): {
         defeats++
       }
       playersPerMatch += matchData.players.length
+      const matchTime = addTimes(matchData.players.map(p => p.time))
+      console.log(matchData.date, timeToString(matchTime))
       matchData.players.forEach((playerData) => {
         let playerModel = acc.players[playerData.player]
         if (!playerModel) {
@@ -143,6 +145,7 @@ export const extractModels = (data: MatchData[]): {
         playerModel.points3 += playerData.points3
         playerModel.fouls += playerData.fouls
         playerModel.matchs++
+        
 
         const playerMatchModel: PlayerMatchModel = {
           ...playerData,

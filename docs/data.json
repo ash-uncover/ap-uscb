@@ -373,19 +373,19 @@
         {
           "player": "Sebastien",
           "time": [
-            0,
-            0
+            26,
+            15
           ],
           "points3": 0,
-          "points2i": 1,
-          "points2e": 0,
+          "points2i": 0,
+          "points2e": 1,
           "points1": 2,
-          "fouls": 0
+          "fouls": 5
         },
         {
           "player": "Bernard",
           "time": [
-            0,
+            10,
             0
           ],
           "points3": 0,
@@ -397,86 +397,86 @@
         {
           "player": "Rui",
           "time": [
-            0,
-            0
+            15,
+            11
           ],
           "points3": 0,
           "points2i": 1,
           "points2e": 0,
           "points1": 0,
-          "fouls": 0
+          "fouls": 1
         },
         {
           "player": "Lucas",
           "time": [
-            0,
-            0
+            37,
+            14
           ],
           "points3": 0,
           "points2i": 6,
           "points2e": 0,
           "points1": 4,
-          "fouls": 0
+          "fouls": 2
         },
         {
           "player": "Vincent B",
           "time": [
-            0,
-            0
+            37,
+            46
           ],
           "points3": 0,
           "points2i": 9,
           "points2e": 0,
           "points1": 4,
-          "fouls": 0
+          "fouls": 20
         },
         {
           "player": "Theo",
           "time": [
-            0,
-            0
+            2,
+            46
           ],
           "points3": 0,
           "points2i": 0,
           "points2e": 0,
           "points1": 0,
-          "fouls": 0
+          "fouls": 4
         },
         {
-          "player": "Jeremie",
+          "player": "Jean-Baptiste",
           "time": [
-            0,
-            0
+            28,
+            34
           ],
           "points3": 0,
           "points2i": 2,
           "points2e": 0,
           "points1": 0,
-          "fouls": 0
+          "fouls": 1
         },
         {
           "player": "Olivier",
           "time": [
-            0,
-            0
+            20,
+            20
           ],
           "points3": 1,
           "points2i": 4,
           "points2e": 0,
           "points1": 1,
-          "fouls": 0
+          "fouls": 3
         },
         {
           "player": "Vincent H",
           "time": [
-            0,
-            0
+            21,
+            54
           ],
           "points3": 0,
           "points2i": 2,
           "points2e": 0,
           "points1": 0,
-          "fouls": 0
+          "fouls": 1
         }
       ]
     },
