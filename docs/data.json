@@ -1,5 +1,239 @@
 {
-  "data": [
+  "data": [    
+    {
+      "date": "2024/09/22",
+      "score": 64,
+      "scoreOpponent": 48,
+      "opponent": "Houilles",
+      "home": true,
+      "players": [
+        {
+          "player": "Jean-Michel",
+          "time": [
+            0,
+            0
+          ],
+          "points3": 4,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 1,
+          "fouls": 1
+        },
+        {
+          "player": "Sebastien",
+          "time": [
+            0,
+            0
+          ],
+          "points3": 2,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 1,
+          "fouls": 4
+        },
+        {
+          "player": "Philippe",
+          "time": [
+            0,
+            0
+          ],
+          "points3": 0,
+          "points2i": 1,
+          "points2e": 1,
+          "points1": 1,
+          "fouls": 0
+        },
+        {
+          "player": "Lucas",
+          "time": [
+            0,
+            0
+          ],
+          "points3": 0,
+          "points2i": 3,
+          "points2e": 1,
+          "points1": 4,
+          "fouls": 2
+        },
+        {
+          "player": "Rui",
+          "time": [
+            0,
+            0
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 1
+        },
+        {
+          "player": "Vincent B",
+          "time": [
+            0,
+            0
+          ],
+          "points3": 0,
+          "points2i": 4,
+          "points2e": 2,
+          "points1": 3,
+          "fouls": 3
+        },
+        {
+          "player": "Theo",
+          "time": [
+            0,
+            0
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 2
+        },
+        {
+          "player": "Karim",
+          "time": [
+            0,
+            0
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 4,
+          "fouls": 5
+        },
+        {
+          "player": "Arnaud",
+          "time": [
+            0,
+            0
+          ],
+          "points3": 0,
+          "points2i": 2,
+          "points2e": 1,
+          "points1": 0,
+          "fouls": 2
+        },
+        {
+          "player": "Guillaume D",
+          "time": [
+            0,
+            0
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 1,
+          "points1": 0,
+          "fouls": 1
+        }
+      ]
+    },
+    {
+      "date": "2024/09/29",
+      "score": 45,
+      "scoreOpponent": 81,
+      "opponent": "Chatou",
+      "home": false,
+      "players": [
+        {
+          "player": "Jean-Michel",
+          "time": [
+            32,
+            11
+          ],
+          "points3": 0,
+          "points2i": 1,
+          "points2e": 1,
+          "points1": 0,
+          "fouls": 1
+        },
+        {
+          "player": "Rui",
+          "time": [
+            18,
+            10
+          ],
+          "points3": 0,
+          "points2i": 1,
+          "points2e": 0,
+          "points1": 1,
+          "fouls": 1
+        },
+        {
+          "player": "Philippe",
+          "time": [
+            30,
+            36
+          ],
+          "points3": 0,
+          "points2i": 3,
+          "points2e": 1,
+          "points1": 3,
+          "fouls": 1
+        },
+        {
+          "player": "Lucas",
+          "time": [
+            29,
+            1
+          ],
+          "points3": 0,
+          "points2i": 2,
+          "points2e": 0,
+          "points1": 3,
+          "fouls": 0
+        },
+        {
+          "player": "Karim",
+          "time": [
+            20,
+            10
+          ],
+          "points3": 0,
+          "points2i": 3,
+          "points2e": 0,
+          "points1": 2,
+          "fouls": 5
+        },
+        {
+          "player": "Theo",
+          "time": [
+            18,
+            48
+          ],
+          "points3": 0,
+          "points2i": 1,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 3
+        },
+        {
+          "player": "Jean-Baptiste",
+          "time": [
+            23,
+            16
+          ],
+          "points3": 0,
+          "points2i": 1,
+          "points2e": 0,
+          "points1": 1,
+          "fouls": 1
+        },
+        {
+          "player": "Olivier",
+          "time": [
+            27,
+            48
+          ],
+          "points3": 0,
+          "points2i": 3,
+          "points2e": 0,
+          "points1": 1,
+          "fouls": 0
+        }
+      ]
+    },
     {
       "date": "2024/10/13",
       "score": 47,
