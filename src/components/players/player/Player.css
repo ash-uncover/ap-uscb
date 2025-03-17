@@ -1,3 +1,5 @@
 .ap-player {
-  
+  & .ap-player-tiles {
+    margin-bottom: 2rem;
+  }
 }
