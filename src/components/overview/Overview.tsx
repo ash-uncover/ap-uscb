@@ -85,6 +85,12 @@ export const Overview = () => {
         stat='Temps'
         compare={(p1: PlayerModel, p2: PlayerModel) => compareTimes(p2.time, p1.time)}
         formatter={(p: PlayerModel) => timeToString(p.time)}
+        />
+      <OverviewTable
+        title='Temps de jeu / match'
+        stat='Temps'
+        compare={(p1: PlayerModel, p2: PlayerModel) => compareTimes(p2.timePerMatch, p1.timePerMatch)}
+        formatter={(p: PlayerModel) => timeToString(p.timePerMatch)}
       />
       <OverviewTable
         title='Top Scoreurs'
