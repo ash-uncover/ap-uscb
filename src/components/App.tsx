@@ -10,6 +10,7 @@ import { AppHeader } from './AppHeader'
 import { AppNav } from './AppNav'
 
 import './App.css'
+import { AppLoading } from './AppLoading'
 
 export const App = () => {
 
@@ -34,7 +35,7 @@ export const App = () => {
       classes.push('ap-app--fetching')
       return (
         <div className={classes.join(' ')}>
-          LOADING
+          <AppLoading />
         </div>
       )
     }
