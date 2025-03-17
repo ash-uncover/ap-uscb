@@ -13,7 +13,7 @@ export const ProgressBar = ({
   // #region Hooks
   const [width, setWidth] = useState<string>('0')
   useEffect(() => {
-    setWidth('100%')
+    setTimeout(() => setWidth('100%'), 0)
   }, [])
   // #endregion
 
