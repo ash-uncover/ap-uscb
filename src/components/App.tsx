@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import { DataStates } from '@uncover/js-utils'
 
 import { loadData } from '../services/DataService'
@@ -16,13 +16,20 @@ export const App = () => {
 
   // #region Hooks
   const dispatch = useDispatch()
+  const ref = useRef(null)
   const dataState = useSelector(DataSelectors.dataState)
   const dataError = useSelector(DataSelectors.dataError)
+  const location = useLocation()
   useEffect(() => {
     if (dataState === DataStates.NEVER) {
       loadData(dispatch)
     }
   }, [dataState])
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.scrollTop = 0
+    }
+  }, [location])
   // #endregion
   
   // #region Rendering
@@ -52,7 +59,7 @@ export const App = () => {
       return (
         <div className={classes.join(' ')}>
           <AppHeader />
-          <main className='ap-app-main'>
+          <main className='ap-app-main' ref={ref}>
             <Outlet />
           </main>
           <AppNav />
