@@ -5,6 +5,7 @@
       "score": 64,
       "scoreOpponent": 48,
       "opponent": "Houilles",
+      "foulsOpponent": 19,
       "home": true,
       "players": [
         {
@@ -134,6 +135,7 @@
       "score": 45,
       "scoreOpponent": 81,
       "opponent": "Chatou",
+      "foulsOpponent": 23,
       "home": false,
       "players": [
         {
@@ -239,6 +241,7 @@
       "score": 47,
       "scoreOpponent": 45,
       "opponent": "Montesson",
+      "foulsOpponent": 18,
       "home": true,
       "players": [
         {
@@ -368,6 +371,7 @@
       "score": 64,
       "scoreOpponent": 47,
       "opponent": "Noisy",
+      "foulsOpponent": 20,
       "home": false,
       "players": [
         {
@@ -485,6 +489,7 @@
       "score": 38,
       "scoreOpponent": 47,
       "opponent": "Maisons Laffite",
+      "foulsOpponent": 0,
       "home": true,
       "players": [
         {
@@ -614,6 +619,7 @@
       "score": 46,
       "scoreOpponent": 59,
       "opponent": "US PECQ",
+      "foulsOpponent": 31,
       "home": false,
       "players": [
         {
@@ -731,6 +737,7 @@
       "score": 46,
       "scoreOpponent": 70,
       "opponent": "Mesnil Le Roi",
+      "foulsOpponent": 14,
       "home": true,
       "players": [
         {
@@ -837,6 +844,7 @@
       "scoreOpponent": 100,
       "home": true,
       "opponent": "Andresy",
+      "foulsOpponent": 22,
       "players": [
         {
           "player": "Jean-Michel",
@@ -953,6 +961,7 @@
       "score": 41,
       "scoreOpponent": 68,
       "opponent": "Verneuil",
+      "foulsOpponent": 15,
       "home": false,
       "players": [
         {
@@ -1082,6 +1091,7 @@
       "score": 30,
       "scoreOpponent": 32,
       "opponent": "Houilles",
+      "foulsOpponent": 22,
       "home": false,
       "players": [
         {
@@ -1199,6 +1209,7 @@
       "score": 68,
       "scoreOpponent": 48,
       "opponent": "Chatou",
+      "foulsOpponent": 22,
       "home": true,
       "players": [
         {
@@ -1328,6 +1339,7 @@
       "score": 42,
       "scoreOpponent": 73,
       "opponent": "Andresy",
+      "foulsOpponent": 11,
       "home": false,
       "players": [
         {
@@ -1457,6 +1469,7 @@
       "score": 55,
       "scoreOpponent": 61,
       "opponent": "Montesson",
+      "foulsOpponent": 12,
       "home": false,
       "players": [
         {
@@ -1574,6 +1587,7 @@
       "score": 54,
       "scoreOpponent": 59,
       "opponent": "Noisy",
+      "foulsOpponent": 18,
       "home": true,
       "players": [
         {

@@ -65,6 +65,26 @@ export const Overview = () => {
           desc='Points par match'
           icon={['fas', 'basketball']}
         />
+        <Tile
+          text={`${general.fouls}`}
+          desc='Fautes Commises'
+          icon={['fas', 'circle-exclamation']}
+        />
+        <Tile
+          text={`${general.foulsOpponent}`}
+          desc='Fautes Provoquées'
+          icon={['fas', 'circle-exclamation']}
+        />
+        <Tile
+          text={`${general.points3}`}
+          desc='3 Points'
+          icon={['fas', 'basketball']}
+        />
+        <Tile
+          text={`${general.points1}`}
+          desc='Lancers Francs'
+          icon={['fas', 'basketball']}
+        />
       </div>
 
       <Title

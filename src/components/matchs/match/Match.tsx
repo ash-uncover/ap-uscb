@@ -42,7 +42,7 @@ export const Match = () => {
       >
         Résultat
       </Title>
-      <MatchResult 
+      <MatchResult
         team1={match.home ? TEAM : match.opponent}
         score1={match.home ? match.score : match.scoreOpponent}
         team2={match.home ? match.opponent : TEAM}
@@ -66,6 +66,26 @@ export const Match = () => {
           text={`${match.players.length}`}
           desc='Joueurs'
           icon={['fas', 'users']}
+        />
+        <Tile
+          text={`${match.fouls}`}
+          desc='Fautes Commises'
+          icon={['fas', 'circle-exclamation']}
+        />
+        <Tile
+          text={`${match.foulsOpponent}`}
+          desc='Fautes Provoquées'
+          icon={['fas', 'circle-exclamation']}
+        />
+        <Tile
+          text={`${match.points3}`}
+          desc='3 Points'
+          icon={['fas', 'basketball']}
+        />
+        <Tile
+          text={`${match.points1}`}
+          desc='Lancers Francs'
+          icon={['fas', 'basketball']}
         />
       </div>
 
