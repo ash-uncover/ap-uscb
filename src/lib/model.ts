@@ -1,4 +1,4 @@
-import { addTimes, avgTime, compareTimes, timeToSeconds, timeToString, valuePerMin } from "./time"
+import { addTimes, asPercentage, avgTime, compareTimes, fromPercentage, subTimes, timeToSeconds, timeToString, valuePerMin } from "./time"
 
 export const TEAM = 'Conflans'
 
@@ -129,11 +129,7 @@ export const extractModels = (data: MatchData[]): {
         defeats++
       }
       playersPerMatch += matchData.players.length
-      const matchTime = addTimes(matchData.players.map(p => p.time))
-      console.log(matchData.date, timeToString(matchTime))
-      if (compareTimes([190,0], matchTime) > 0) {
-        console.log(' > should update')
-      }
+
       matchData.players.forEach((playerData) => {
         let playerModel = acc.players[playerData.player]
         if (!playerModel) {
@@ -171,8 +167,6 @@ export const extractModels = (data: MatchData[]): {
           pointsPerMin: 0,
           foulsPerMin: 0
         }
-        playerMatchModel.pointsPerMin = valuePerMin(playerMatchModel.points, playerData.time)
-        playerMatchModel.foulsPerMin = valuePerMin(playerMatchModel.fouls, playerData.time)
         matchModel.fouls += playerMatchModel.fouls
         matchModel.points1 += playerMatchModel.points1
         matchModel.points2e += playerMatchModel.points2e
@@ -187,9 +181,62 @@ export const extractModels = (data: MatchData[]): {
   )
 
   // Fix time issues
-  
+  interface PlayerTime {
+    playTime: TimeModel
+    matchTime: TimeModel 
+    playPercentage: number
+  }
+  const playersTimes: Record<string, PlayerTime> = Object.values(matchs).reduce((acc, match) => {
+    const matchTime = addTimes(match.players.map(p => p.time))
+    if (compareTimes([190, 0], matchTime) <= 0) {
+      match.players.forEach((player) => {
+        let playerTime = acc[player.player]
+        if (!playerTime) {
+          playerTime = { 
+            playTime: [0, 0], 
+            playPercentage: 0,
+            matchTime: [0, 0]
+          }
+          acc[player.player] = playerTime
+        }
+        playerTime.playTime = addTimes([playerTime.playTime, player.time])
+        playerTime.matchTime = addTimes([playerTime.matchTime, matchTime])
+      })
+    }
+    return acc
+  }, {})
+  Object.values(playersTimes).forEach((playerTime) => {
+    playerTime.playPercentage = asPercentage(playerTime.matchTime, playerTime.playTime)
+  })
+
+  Object.values(matchs).forEach(match => {
+    const matchTime = addTimes(match.players.map(p => p.time))
+    console.log(match.date, timeToString(matchTime))
+    if (compareTimes([190, 0], matchTime) > 0) {
+      console.log(' >> Les temps de jeu seront mis a jour pour ce match')
+      const missingTime = subTimes([200, 0], matchTime)
+      const totalPlayerPerct = match.players.reduce((acc, player) => {
+        return acc + playersTimes[player.player].playPercentage
+      }, 0)
+      console.log(' >> Temps manquant:', missingTime, '- Total Perct: ', totalPlayerPerct)
+      match.players.forEach(player => {
+        const realPerct = 100 * playersTimes[player.player].playPercentage / totalPlayerPerct
+        const computedTime = fromPercentage(missingTime, realPerct)
+        player.time = addTimes([player.time, computedTime])
+        player.pointsPerMin = valuePerMin(player.points, player.time)
+        player.foulsPerMin = valuePerMin(player.fouls, player.time)
+      })
+    }
+  })
 
   Object.values(players).forEach(player => {
+    // Update player time
+    console.log('Update player time from', player.player, player.time);
+    const computedTime: TimeModel = Object.values(matchs).reduce((acc: TimeModel, match) => {
+      return addTimes([acc, (match.players.find(p => p.player === player.player)?.time) || [0,0]])
+    }, [0,0]);
+    console.log('  to', computedTime);
+    player.time = computedTime
     player.pointsPerMatch = player.points / player.matchs
     player.pointsPerMin = valuePerMin(player.points, player.time)
     player.foulsPerMatch = player.fouls / player.matchs
