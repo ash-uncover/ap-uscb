@@ -1,6 +1,3 @@
-import { Logger } from '@uncover/js-utils-logger'
-const LOGGER = new Logger('CONFIG')
-
 // Default hard-coded values
 export const CONFIG: {
   AP_USCB_PUBLIC: string
@@ -20,7 +17,7 @@ try {
     CONFIG.AP_USCB_ENVIRONMENT = process.env.AP_USCB_ENVIRONMENT
   }
 } catch (error) {
-  LOGGER.warn('Failed to load from process.env')
+  console.warn('Failed to load from process.env')
 }
 
 console.log('CONFIG')
