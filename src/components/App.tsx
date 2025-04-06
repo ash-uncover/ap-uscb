@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Outlet, useLocation } from 'react-router-dom'
-import { DataStates } from '@uncover/js-utils'
+import { DataStates } from '@sol.ac/js-utils'
 
 import { loadData } from '../services/DataService'
 import { DataSelectors } from '../store/data/data.selectors'

@@ -55,7 +55,7 @@
  */
 
 /**
- * react-router v7.2.0
+ * react-router v7.5.0
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -66,7 +66,7 @@
  */
 
 /**
- * react-router-dom v7.2.0
+ * react-router-dom v7.5.0
  *
  * Copyright (c) Remix Software Inc.
  *

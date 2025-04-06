@@ -1,4 +1,4 @@
-import { DataState } from '@uncover/js-utils'
+import { DataState } from '@sol.ac/js-utils'
 
 import { GeneralModel, MatchData, MatchModel, PlayerModel } from '../../lib/model'
 

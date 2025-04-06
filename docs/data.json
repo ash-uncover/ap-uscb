@@ -1959,6 +1959,136 @@
           "fouls": 2
         }
       ]
+    },
+    {
+      "date": "2025/04/06",
+      "score": 52,
+      "scoreOpponent": 54,
+      "opponent": "Mesnil Le Roi",
+      "foulsOpponent": 25,
+      "home": false,
+      "players": [
+        {
+          "player": "Jean-Michel",
+          "time": [
+            25,
+            59
+          ],
+          "points3": 2,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 0
+        },
+        {
+          "player": "Sebastien",
+          "time": [
+            19,
+            37
+          ],
+          "points3": 1,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 5
+        },
+        {
+          "player": "Rui",
+          "time": [
+            17,
+            33
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 1,
+          "fouls": 3
+        },
+        {
+          "player": "Philippe",
+          "time": [
+            19,
+            33
+          ],
+          "points3": 0,
+          "points2i": 1,
+          "points2e": 1,
+          "points1": 2,
+          "fouls": 5
+        },
+        {
+          "player": "Antoine",
+          "time": [
+            6,
+            50
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 0
+        },
+        {
+          "player": "Lucas",
+          "time": [
+            25,
+            40
+          ],
+          "points3": 0,
+          "points2i": 5,
+          "points2e": 0,
+          "points1": 2,
+          "fouls": 3
+        },
+        {
+          "player": "Arnaud",
+          "time": [
+            33,
+            8
+          ],
+          "points3": 0,
+          "points2i": 5,
+          "points2e": 0,
+          "points1": 2,
+          "fouls": 4
+        },
+        {
+          "player": "Karim",
+          "time": [
+            16,
+            53
+          ],
+          "points3": 0,
+          "points2i": 3,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 5
+        },
+        {
+          "player": "Jean-Baptiste",
+          "time": [
+            25,
+            43
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 1,
+          "points1": 2,
+          "fouls": 3
+        },
+        {
+          "player": "Guillaume D",
+          "time": [
+            9,
+            24
+          ],
+          "points3": 0,
+          "points2i": 1,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 3
+        }
+      ]
     }
   ]
 }
