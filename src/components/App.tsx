@@ -22,7 +22,8 @@ export const App = () => {
   const location = useLocation()
   useEffect(() => {
     if (dataState === DataStates.NEVER) {
-      loadData(dispatch)
+      const params = new URLSearchParams(location.search)
+      loadData(dispatch, params.get('data'))
     }
   }, [dataState])
   useEffect(() => {

@@ -1,9 +1,10 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
 
 import { TEAM } from '../../lib/model'
 import { DataSelectors } from '../../store/data/data.selectors'
+import { useNavigateWithParams } from '../../lib/useNavigateWithParams'
+import { LinkWithParams } from '../common/link/LinkWithParams'
 
 export const MatchTableRow = ({
   matchId
@@ -11,7 +12,7 @@ export const MatchTableRow = ({
 
   // #region Hooks
   const match = useSelector(DataSelectors.match(matchId))
-  const navigate = useNavigate()
+  const navigate = useNavigateWithParams()
   // #endregion
 
   // #region Callbacks
@@ -35,7 +36,7 @@ export const MatchTableRow = ({
       onClick={handleClick}
     >
       <td className='ap-matchs-table-cell--date'>
-        <Link to={`/matchs/${matchId}`}>{matchId}</Link>
+        <LinkWithParams to={`/matchs/${matchId}`}>{matchId}</LinkWithParams>
       </td>
       <td style={{ textAlign: 'end', fontWeight: winL ? 'bold' : 'normal' }}>
         <div>{teamL}</div>

@@ -47,7 +47,7 @@ const getDataSuccess: CaseReducer<DataModel, PayloadAction<getDataSuccessPayload
     general,
     matchs,
     players
-  } = extractModels(action.payload.data)
+  } = extractModels(action.payload.data.filter(matchData => !matchData.ignore))
   state.general = general
   state.matchs = matchs
   state.players = players

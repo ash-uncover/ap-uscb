@@ -1,7 +1,7 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { LinkWithParams } from '../link/LinkWithParams'
 
 export interface BreadcrumbsItemProperties {
   text: string
@@ -32,10 +32,10 @@ export const BreadcrumbsItem = ({
 
   if (link) {
     return (
-      <Link className={classes.join(' ')} to={link}>
+      <LinkWithParams className={classes.join(' ')} to={link}>
         {icon ? <FontAwesomeIcon icon={icon} /> : null}
         {text}
-      </Link>
+      </LinkWithParams>
     )
   }
   return (

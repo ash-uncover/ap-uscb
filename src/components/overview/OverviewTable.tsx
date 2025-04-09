@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
 
 import { DataSelectors } from '../../store/data/data.selectors'
 import { Title } from '../common/title/Title'
 import { TitleLevels } from '../common/title/TitleLevels'
 import { PlayerModel } from 'src/lib/model'
+import { LinkWithParams } from '../common/link/LinkWithParams'
 
 export interface OverviewTableProperties {
   title: string
@@ -67,7 +67,7 @@ export const OverviewTable = ({
                   {`#${index + 1}`}
                 </td>
                 <td className='table-cell--player'>
-                  <Link to={`/players/${player.player}`}>{player.player}</Link>
+                  <LinkWithParams to={`/players/${player.player}`}>{player.player}</LinkWithParams>
                 </td>
                 <td  className='table-cell--stat'>
                   {formatter(player)}

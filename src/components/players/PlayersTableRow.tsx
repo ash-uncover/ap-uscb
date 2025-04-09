@@ -1,8 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
 
 import { DataSelectors } from '../../store/data/data.selectors'
+import { LinkWithParams } from '../common/link/LinkWithParams'
 
 export const PlayerTableRow = ({
   playerId
@@ -21,7 +21,7 @@ export const PlayerTableRow = ({
   return (
     <tr className={classes.join(' ')}>
       <td>
-        <Link to={`/players/${playerId}`}>{playerId}</Link>
+        <LinkWithParams to={`/players/${playerId}`}>{playerId}</LinkWithParams>
       </td>
       <td>
         {player.matchs}

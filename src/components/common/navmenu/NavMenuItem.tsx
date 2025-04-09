@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { LinkWithParams } from '../link/LinkWithParams'
 
 export interface NavMenuItemProperties {
   className?: string
@@ -35,9 +35,9 @@ export const NavMenuItem = ({
   if (link) {
     return (
       <div className={classes.join(' ')}>
-        <Link className={'ap-navmenu-item-content'} to={link}>
+        <LinkWithParams className={'ap-navmenu-item-content'} to={link}>
           {icon ? <FontAwesomeIcon icon={icon} /> : null}
-        </Link>
+        </LinkWithParams>
       </div>
     )
   }

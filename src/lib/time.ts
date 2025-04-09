@@ -37,7 +37,12 @@ export const compareTimes = (t1: TimeModel, t2: TimeModel): number => {
 }
 
 export const asPercentage = (total: TimeModel, value: TimeModel): number => {
-  return 100 * timeToSeconds(value) / timeToSeconds(total)
+  const sValue = timeToSeconds(value)
+  const sTotal = timeToSeconds(total)
+  if (sTotal) {
+    return 100 * sValue / sTotal
+  }
+  return 0
 }
 
 export const fromPercentage = (total: TimeModel, percent: number): TimeModel => {

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
 
 import { DataSelectors } from '../../../store/data/data.selectors'
 import { PlayerMatchModel } from '../../../lib/model'
 import { timeToString } from '../../../lib/time'
+import { useNavigateWithParams } from '../../../lib/useNavigateWithParams'
+import { LinkWithParams } from '../../common/link/LinkWithParams'
 
 export const MatchTablePlayerRow = ({
   matchId,
@@ -14,7 +15,7 @@ export const MatchTablePlayerRow = ({
   // #region Hooks
   const [player, setPlayer] = useState<PlayerMatchModel>()
   const match = useSelector(DataSelectors.match(matchId))
-  const navigate = useNavigate()
+  const navigate = useNavigateWithParams()
   useEffect(() => {
     const newPlayer = match.players.find(p => p.player === playerId)
     setPlayer(newPlayer)
@@ -39,7 +40,7 @@ export const MatchTablePlayerRow = ({
         onClick={handleClick}
       >
         <td>
-          <Link to={`/players/${player.player}`}>{player.player}</Link>
+          <LinkWithParams to={`/players/${player.player}`}>{player.player}</LinkWithParams>
         </td>
         <td>
           {timeToString(player.time)}

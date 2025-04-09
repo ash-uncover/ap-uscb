@@ -7,6 +7,7 @@ export interface MatchData {
   date: string
   score: number
   home: boolean
+  ignore?: boolean
   opponent: string
   foulsOpponent: number
   scoreOpponent: number
@@ -87,6 +88,46 @@ export interface PlayerStatTime {
 }
 // #endregion
 
+export const getMatchId = (match: MatchData): string => {
+  return match.date.split('/').join('-')
+}
+
+export const getInitialMatchModel = (match: MatchData): MatchModel => {
+  return {
+    date: getMatchId(match),
+    score: match.score,
+    home: match.home,
+    opponent: match.opponent,
+    scoreOpponent: match.scoreOpponent,
+    foulsOpponent: match.foulsOpponent,
+    players: [],
+    fouls: 0,
+    points1: 0,
+    points2i: 0,
+    points2e: 0,
+    points3: 0,
+  }
+}
+
+export const getDefaultPlayerModel = (player: string): PlayerModel => {
+  return {
+    player,
+    time: [0, 0],
+    points: 0,
+    points1: 0,
+    points2i: 0,
+    points2e: 0,
+    points3: 0,
+    fouls: 0,
+    matchs: 0,
+    pointsPerMatch: 0,
+    pointsPerMin: 0,
+    foulsPerMatch: 0,
+    foulsPerMin: 0,
+    timePerMatch: [0, 0],
+  }
+}
+
 export const extractModels = (data: MatchData[]): {
   general: GeneralModel,
   matchs: Record<string, MatchModel>,
@@ -101,25 +142,12 @@ export const extractModels = (data: MatchData[]): {
     players
   } = data.reduce(
     (acc: { matchs: Record<string, MatchModel>, players: Record<string, PlayerModel> }, matchData) => {
-      const matchId = matchData.date.split('/').join('-')
+      const matchId = getMatchId(matchData)
       if (acc.matchs[matchId]) {
         console.warn(`Match already defined '${matchId}', ignoring`)
         return acc
       }
-      const matchModel = {
-        date: matchId,
-        score: matchData.score,
-        home: matchData.home,
-        opponent: matchData.opponent,
-        scoreOpponent: matchData.scoreOpponent,
-        foulsOpponent: matchData.foulsOpponent,
-        players: [],
-        fouls: 0,
-        points1: 0,
-        points2i: 0,
-        points2e: 0,
-        points3: 0,
-      }
+      const matchModel = getInitialMatchModel(matchData)
 
       if (matchData.score === matchData.scoreOpponent) {
         draws++
@@ -133,22 +161,7 @@ export const extractModels = (data: MatchData[]): {
       matchData.players.forEach((playerData) => {
         let playerModel = acc.players[playerData.player]
         if (!playerModel) {
-          playerModel = {
-            player: playerData.player,
-            time: [0, 0],
-            points: 0,
-            points1: 0,
-            points2i: 0,
-            points2e: 0,
-            points3: 0,
-            fouls: 0,
-            matchs: 0,
-            pointsPerMatch: 0,
-            pointsPerMin: 0,
-            foulsPerMatch: 0,
-            foulsPerMin: 0,
-            timePerMatch: [0, 0],
-          }
+          playerModel = getDefaultPlayerModel(playerData.player)
           acc.players[playerData.player] = playerModel
         }
         const points = playerData.points1 + playerData.points2e * 2 + playerData.points2i * 2 + playerData.points3 * 3
@@ -183,17 +196,18 @@ export const extractModels = (data: MatchData[]): {
   // Fix time issues
   interface PlayerTime {
     playTime: TimeModel
-    matchTime: TimeModel 
+    matchTime: TimeModel
     playPercentage: number
   }
   const playersTimes: Record<string, PlayerTime> = Object.values(matchs).reduce((acc, match) => {
     const matchTime = addTimes(match.players.map(p => p.time))
-    if (compareTimes([190, 0], matchTime) <= 0) {
+    // if (compareTimes([190, 0], matchTime) <= 0) {
+    // }
       match.players.forEach((player) => {
         let playerTime = acc[player.player]
         if (!playerTime) {
-          playerTime = { 
-            playTime: [0, 0], 
+          playerTime = {
+            playTime: [0, 0],
             playPercentage: 0,
             matchTime: [0, 0]
           }
@@ -202,16 +216,16 @@ export const extractModels = (data: MatchData[]): {
         playerTime.playTime = addTimes([playerTime.playTime, player.time])
         playerTime.matchTime = addTimes([playerTime.matchTime, matchTime])
       })
-    }
     return acc
   }, {})
   Object.values(playersTimes).forEach((playerTime) => {
     playerTime.playPercentage = asPercentage(playerTime.matchTime, playerTime.playTime)
   })
+  console.log(playersTimes)
 
   Object.values(matchs).forEach(match => {
     const matchTime = addTimes(match.players.map(p => p.time))
-    console.log(match.date, timeToString(matchTime), 'scores check', match.score, match.players.reduce((a, p) => a + p.points1 + p.points2e*2 + p.points2i*2 + p.points3*3, 0))
+    console.log(match.date, timeToString(matchTime), 'scores check', match.score, match.players.reduce((a, p) => a + p.points1 + p.points2e * 2 + p.points2i * 2 + p.points3 * 3, 0))
     if (compareTimes([190, 0], matchTime) > 0) {
       console.log(' >> Les temps de jeu seront mis a jour pour ce match')
       const missingTime = subTimes([200, 0], matchTime)
@@ -231,11 +245,11 @@ export const extractModels = (data: MatchData[]): {
 
   Object.values(players).forEach(player => {
     // Update player time
-    console.log('Update player time from', player.player, player.time);
+    //console.log('Update player time from', player.player, player.time);
     const computedTime: TimeModel = Object.values(matchs).reduce((acc: TimeModel, match) => {
-      return addTimes([acc, (match.players.find(p => p.player === player.player)?.time) || [0,0]])
-    }, [0,0]);
-    console.log('  to', computedTime);
+      return addTimes([acc, (match.players.find(p => p.player === player.player)?.time) || [0, 0]])
+    }, [0, 0]);
+    //console.log('  to', computedTime);
     player.time = computedTime
     player.pointsPerMatch = player.points / player.matchs
     player.pointsPerMin = valuePerMin(player.points, player.time)

@@ -5,4 +5,3 @@ __coverage__
 .vscode
 config.json
 configuration.json
-public/*.json

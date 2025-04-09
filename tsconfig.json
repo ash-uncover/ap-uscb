@@ -17,7 +17,7 @@
     "src/**/*.jsx",
     "src/**/*.ts",
     "src/**/*.tsx"
-  ],
+, "test/model.spec.ts"  ],
   "exclude": [
     "dist",
     "node_modules",
