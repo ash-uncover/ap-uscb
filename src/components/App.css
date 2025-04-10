@@ -20,6 +20,14 @@
     }
   }
 
+  transition: height 0.15s, margin-top 0.15s;
+
+  &.ap-app--scrolled {
+    margin-top: -2.5rem;
+    height: calc(100% + 2.5rem);
+    transition: height 0.1s, margin-top 0.1s;
+  }
+
   & .ap-app-header {
     height: 2.5rem;
     position: relative;
@@ -29,6 +37,7 @@
     gap: 0.75rem;
     background: #EEE;
     color: #004A7F;
+
     
     &::before {
       content: ' ';
