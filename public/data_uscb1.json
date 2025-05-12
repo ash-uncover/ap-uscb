@@ -2078,6 +2078,136 @@
           "fouls": 0
         }
       ]
+    },
+    {
+      "date": "2025/05/25",
+      "score": 54,
+      "scoreOpponent": 62,
+      "opponent": "Gargenville",
+      "foulsOpponent": 15,
+      "home": false,
+      "players": [
+        {
+          "player": "Clement",
+          "time": [
+            22,
+            19
+          ],
+          "points3": 0,
+          "points2i": 3,
+          "points2e": 1,
+          "points1": 0,
+          "fouls": 1
+        },
+        {
+          "player": "Theo",
+          "time": [
+            8,
+            19
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 1
+        },
+        {
+          "player": "Junior",
+          "time": [
+            5,
+            43
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 1
+        },
+        {
+          "player": "Clyde",
+          "time": [
+            25,
+            38
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 1
+        },
+        {
+          "player": "Yohann",
+          "time": [
+            34,
+            14
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 1,
+          "fouls": 5
+        },
+        {
+          "player": "Alexandre B",
+          "time": [
+            1,
+            15
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 1
+        },
+        {
+          "player": "Nicolas",
+          "time": [
+            16,
+            38
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 1
+        },
+        {
+          "player": "Romain",
+          "time": [
+            32,
+            38
+          ],
+          "points3": 0,
+          "points2i": 7,
+          "points2e": 1,
+          "points1": 1,
+          "fouls": 3
+        },
+        {
+          "player": "Lionel",
+          "time": [
+            26,
+            50
+          ],
+          "points3": 0,
+          "points2i": 4,
+          "points2e": 1,
+          "points1": 0,
+          "fouls": 3
+        },
+        {
+          "player": "Loris",
+          "time": [
+            36,
+            22
+          ],
+          "points3": 2,
+          "points2i": 3,
+          "points2e": 2,
+          "points1": 2,
+          "fouls": 1
+        }
+      ]
     }
   ]
 }
