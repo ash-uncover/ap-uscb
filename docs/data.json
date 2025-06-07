@@ -380,9 +380,9 @@
             26,
             15
           ],
-          "points3": 0,
+          "points3": 1,
           "points2i": 0,
-          "points2e": 1,
+          "points2e": 0,
           "points1": 2,
           "fouls": 5
         },
@@ -464,9 +464,9 @@
             20,
             20
           ],
-          "points3": 1,
+          "points3": 0,
           "points2i": 4,
-          "points2e": 0,
+          "points2e": 1,
           "points1": 1,
           "fouls": 3
         },
@@ -1112,8 +1112,8 @@
             0,
             0
           ],
-          "points3": 0,
-          "points2i": 1,
+          "points3": 1,
+          "points2i": 0,
           "points2e": 0,
           "points1": 0,
           "fouls": 4
@@ -1196,8 +1196,8 @@
             0,
             0
           ],
-          "points3": 1,
-          "points2i": 2,
+          "points3": 0,
+          "points2i": 3,
           "points2e": 0,
           "points1": 1,
           "fouls": 0
