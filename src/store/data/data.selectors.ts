@@ -7,6 +7,7 @@ import { DataModel } from './data.state'
 
 export const base = (state: RootState): DataModel => state.data
 
+export const dataFile = (state: RootState): string => base(state).dataFile
 export const data = (state: RootState): MatchData[] => base(state).data
 export const dataState = (state: RootState): DataState => base(state).dataState
 export const dataError = (state: RootState): string => base(state).dataError
@@ -18,6 +19,7 @@ export const players = (state: RootState): Record<string, PlayerModel> => base(s
 export const player = (id: string) => (state: RootState): PlayerModel => players(state)[id]
 
 export const DataSelectors = {
+  dataFile,
   data,
   dataState,
   dataError,

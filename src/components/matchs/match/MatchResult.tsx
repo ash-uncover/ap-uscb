@@ -13,13 +13,13 @@ export const MatchResult = ({
   score2
 }: MatchResultProperties) => {
 
-  // #region Hooks
+  // #region > Hooks
   // #endregion
 
   // #region Callbacks
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-match-result']
   const classesSide1 = ['ap-match-result-side']
   const classesSide2 = ['ap-match-result-side']

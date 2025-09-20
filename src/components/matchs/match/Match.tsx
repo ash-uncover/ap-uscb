@@ -16,7 +16,7 @@ import './Match.css'
 
 export const Match = () => {
 
-  // #region Hooks
+  // #region > Hooks
   const matchId = useParams().matchId
   const match = useSelector(DataSelectors.match(matchId))
   // #endregion
@@ -24,7 +24,7 @@ export const Match = () => {
   // #region Callbacks
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-match']
 
   return (

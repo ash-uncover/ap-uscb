@@ -10,7 +10,7 @@ export const MatchTableRow = ({
   matchId
 }) => {
 
-  // #region Hooks
+  // #region > Hooks
   const match = useSelector(DataSelectors.match(matchId))
   const navigate = useNavigateWithParams()
   // #endregion
@@ -21,7 +21,7 @@ export const MatchTableRow = ({
   }
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-matchs-table-row']
 
   const teamL = match.home ? TEAM : match.opponent

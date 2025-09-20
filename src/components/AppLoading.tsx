@@ -4,13 +4,13 @@ import { ProgressBar } from './common/progressbar/ProgressBar'
 
 export const AppLoading = () => {
 
-  // #region Hooks
+  // #region > Hooks
   // #endregion
 
   // #region Callbacks
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-app-loading']
 
   return (

@@ -15,13 +15,13 @@ export const Title = ({
   size
 }: TitleProperties) => {
 
-  // #region Hooks
+  // #region > Hooks
   // #endregion
 
   // #region Callbacks
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-title']
   switch (size) {
     case TitleLevels.H2: 

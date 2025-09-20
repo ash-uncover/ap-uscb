@@ -21,7 +21,7 @@ export const Tile = ({
   onClick
 }: TileProperties) => {
 
-  // #region Hooks
+  // #region > Hooks
   // #endregion
 
   // #region Callbacks
@@ -32,7 +32,7 @@ export const Tile = ({
   }
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-tile']
   if (desc) {
     classes.push('ap-tile--descripted')

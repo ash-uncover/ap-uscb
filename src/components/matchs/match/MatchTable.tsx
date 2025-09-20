@@ -4,13 +4,13 @@ export const MatchTable = ({
   children
 }) => {
 
-  // #region Hooks
+  // #region > Hooks
   // #endregion
 
   // #region Callbacks
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-match-table ap-table']
 
   return (

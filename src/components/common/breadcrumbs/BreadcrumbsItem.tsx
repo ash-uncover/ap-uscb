@@ -15,13 +15,13 @@ export const BreadcrumbsItem = ({
   icon
 }: BreadcrumbsItemProperties) => {
 
-  // #region Hooks
+  // #region > Hooks
   // #endregion
 
   // #region Callbacks
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-breadcrumbs-item']
   if (link) {
     classes.push('ap-breadcrumbs-item--linked')

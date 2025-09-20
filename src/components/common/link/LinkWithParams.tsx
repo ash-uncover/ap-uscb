@@ -13,11 +13,11 @@ export const LinkWithParams = ({
   children
 }: LinkWithParamsProperties) => {
 
-  // #region Hooks
+  // #region > Hooks
   const [params] = useSearchParams()
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['link-with-params']
   if (className) {
     classes.push(className)

@@ -10,7 +10,7 @@ export const ProgressBar = ({
   className
 }: ProgressBarProperties) => {
 
-  // #region Hooks
+  // #region > Hooks
   const [width, setWidth] = useState<string>('0')
   useEffect(() => {
     setTimeout(() => setWidth('100%'), 0)
@@ -20,7 +20,7 @@ export const ProgressBar = ({
   // #region Callbacks
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-progressbar']
   if (className) {
     classes.push(className)

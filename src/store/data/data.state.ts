@@ -2,6 +2,7 @@ import { DataState } from '@sol.ac/js-utils';
 import { GeneralModel, MatchData, MatchModel, PlayerModel } from '../../lib/model';
 
 export interface DataModel {
+  dataFile: string
   data: MatchData[]
   dataState: DataState
   dataError: string

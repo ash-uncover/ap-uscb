@@ -17,13 +17,13 @@ export const NavMenuItem = ({
   icon
 }: NavMenuItemProperties) => {
 
-  // #region Hooks
+  // #region > Hooks
   // #endregion
 
   // #region Callbacks
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-navmenu-item']
   if (className) {
     classes.push(className)

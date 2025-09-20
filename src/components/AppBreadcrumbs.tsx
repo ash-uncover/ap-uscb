@@ -74,7 +74,7 @@ function buildBreadcrumbsItems(route: RouteInfo) {
 
 export const AppBreadcrumbs = () => {
 
-  // #region Hooks
+  // #region > Hooks
   const [route, setRoute] = useState<RouteInfo>({ route: 'OVERVIEW' })
   const [breadcrumbsItems, setBreadcrumbsItems] = useState<BreadcrumbsItemProperties[]>([])
   const location = useLocation()
@@ -91,7 +91,7 @@ export const AppBreadcrumbs = () => {
   // #region Callbacks
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-app-breadcrumbs']
 
   return (

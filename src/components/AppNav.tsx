@@ -43,7 +43,7 @@ function buildNavMenuItems(route: string) {
 
 export const AppNav = () => {
 
-  // #region Hooks
+  // #region > Hooks
   const [route, setRoute] = useState<string>('OVERVIEW')
   const [navmenuItems, setNavmenuItems] = useState<NavMenuItemProperties[]>([])
   const location = useLocation()
@@ -60,7 +60,7 @@ export const AppNav = () => {
   // #region Callbacks
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-app-nav']
 
   return (

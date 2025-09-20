@@ -2,13 +2,13 @@ import React from 'react'
 
 export const AppFooter = () => {
 
-  // #region Hooks
+  // #region > Hooks
   // #endregion
 
   // #region Callbacks
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-app-footer']
 
   return (

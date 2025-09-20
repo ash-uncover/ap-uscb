@@ -20,7 +20,7 @@ export const OverviewTable = ({
   formatter
 }) => {
 
-  // #region Hooks
+  // #region > Hooks
   const players = useSelector(DataSelectors.players)
   const [more, setMore] = useState<boolean>(false)
   const [data, setData] = useState([])
@@ -35,7 +35,7 @@ export const OverviewTable = ({
   }
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-overview-table ap-table']
 
   return (

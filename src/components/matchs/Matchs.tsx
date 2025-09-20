@@ -13,7 +13,7 @@ import { TitleLevels } from '../common/title/TitleLevels'
 
 export const Matchs = () => {
 
-  // #region Hooks
+  // #region > Hooks
   const general = useSelector(DataSelectors.general)
   const matchs = useSelector(DataSelectors.matchs)
   // #endregion
@@ -21,7 +21,7 @@ export const Matchs = () => {
   // #region Callbacks
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-matchs']
 
   return (

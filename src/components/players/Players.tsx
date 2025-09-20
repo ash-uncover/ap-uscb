@@ -14,7 +14,7 @@ import './Players.css'
 
 export const Players = () => {
 
-  // #region Hooks
+  // #region > Hooks
   const general = useSelector(DataSelectors.general)
   const players = useSelector(DataSelectors.players)
   // #endregion
@@ -22,7 +22,7 @@ export const Players = () => {
   // #region Callbacks
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-players']
 
   return (

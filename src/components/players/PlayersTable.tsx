@@ -4,13 +4,13 @@ export const PlayersTable = ({
   children
 }) => {
 
-  // #region Hooks
+  // #region > Hooks
   // #endregion
 
   // #region Callbacks
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-players-table ap-table']
 
   return (

@@ -14,14 +14,14 @@ import './Overview.css'
 
 export const Overview = () => {
 
-  // #region Hooks
+  // #region > Hooks
   const general = useSelector(DataSelectors.general)
   // #endregion
 
   // #region Callbacks
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-overview']
 
   return (

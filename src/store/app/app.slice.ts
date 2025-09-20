@@ -1,18 +1,28 @@
 import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
+import type { CaseReducer, PayloadAction } from '@reduxjs/toolkit'
 import { AppModel } from './app.state'
 
 const initialState: AppModel = {
-  loaded: false
+  loaded: false,
+  showMenu: false
 }
+
+// #region Reducers
+const openAppMenu: CaseReducer<AppModel, PayloadAction<void>> = (state) => {
+  state.showMenu = true
+}
+const closeAppMenu: CaseReducer<AppModel, PayloadAction<void>> = (state) => {
+  state.showMenu = false
+}
+// #endregion
 
 export const AppSlice = createSlice({
   name: 'app',
   initialState,
-  reducers: {},
+  reducers: {
+    openAppMenu,
+    closeAppMenu
+  },
 })
-
-export const {
-} = AppSlice.actions
 
 export default AppSlice.reducer

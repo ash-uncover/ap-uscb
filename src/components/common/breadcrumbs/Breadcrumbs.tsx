@@ -15,13 +15,13 @@ export const Breadcrumbs = ({
   items
 }: BreadcrumbsProperties) => {
 
-  // #region Hooks
+  // #region > Hooks
   // #endregion
 
   // #region Callbacks
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-breadcrumbs']
   if (className) {
     classes.push(className)

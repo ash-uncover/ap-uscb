@@ -144,7 +144,7 @@ export const extractModels = (data: MatchData[]): {
     (acc: { matchs: Record<string, MatchModel>, players: Record<string, PlayerModel> }, matchData) => {
       const matchId = getMatchId(matchData)
       if (acc.matchs[matchId]) {
-        console.warn(`Match already defined '${matchId}', ignoring`)
+        // console.warn(`Match already defined '${matchId}', ignoring`)
         return acc
       }
       const matchModel = getInitialMatchModel(matchData)
@@ -221,18 +221,18 @@ export const extractModels = (data: MatchData[]): {
   Object.values(playersTimes).forEach((playerTime) => {
     playerTime.playPercentage = asPercentage(playerTime.matchTime, playerTime.playTime)
   })
-  console.log(playersTimes)
+  // console.log(playersTimes)
 
   Object.values(matchs).forEach(match => {
     const matchTime = addTimes(match.players.map(p => p.time))
-    console.log(match.date, timeToString(matchTime), 'scores check', match.score, match.players.reduce((a, p) => a + p.points1 + p.points2e * 2 + p.points2i * 2 + p.points3 * 3, 0))
+    // console.log(match.date, timeToString(matchTime), 'scores check', match.score, match.players.reduce((a, p) => a + p.points1 + p.points2e * 2 + p.points2i * 2 + p.points3 * 3, 0))
     if (compareTimes([190, 0], matchTime) > 0) {
-      console.log(' >> Les temps de jeu seront mis a jour pour ce match')
+      // console.log(' >> Les temps de jeu seront mis a jour pour ce match')
       const missingTime = subTimes([200, 0], matchTime)
       const totalPlayerPerct = match.players.reduce((acc, player) => {
         return acc + playersTimes[player.player].playPercentage
       }, 0)
-      console.log(' >> Temps manquant:', missingTime, '- Total Perct: ', totalPlayerPerct)
+      // console.log(' >> Temps manquant:', missingTime, '- Total Perct: ', totalPlayerPerct)
       match.players.forEach(player => {
         const realPerct = 100 * playersTimes[player.player].playPercentage / totalPlayerPerct
         const computedTime = fromPercentage(missingTime, realPerct)

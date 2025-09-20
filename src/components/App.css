@@ -20,7 +20,8 @@
     }
   }
 
-  transition: height 0.15s, margin-top 0.15s;
+  transition: height 0.15s,
+  margin-top 0.15s;
 
   &.ap-app--scrolled {
     margin-top: -2.5rem;
@@ -38,7 +39,7 @@
     background: #EEE;
     color: #004A7F;
 
-    
+
     &::before {
       content: ' ';
       position: absolute;
@@ -47,6 +48,46 @@
       left: -15px;
       right: -15px;
       box-shadow: -15px 0px 3px 0px #AAA, 15px 0px 3px 0px #AAA;
+    }
+
+    & .ap-app-header_menu-button {
+      position: absolute;
+      right: 0.5rem;
+      border: 0;
+      background: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+      ;
+    }
+
+    &.ap-app-header--show-menu {
+      & .ap-app-header_menu-button {
+        color: #004A7F;
+      }
+    }
+  }
+
+  & .ap-app-header-menu {
+    box-shadow: -15px 0px 3px 0px #CCC, 15px 0px 3px 0px #CCC;
+
+    & .ap-app-header-menu-item {
+      height: 2rem;
+      border-bottom: 1px solid #DDD;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background: #FAFAFA;
+      user-select: none;
+
+      &:hover {
+        background: #EEE;
+      }
+
+      &.ap-app-header-menu-item--selected {
+        color: #004A7F;
+        font-weight: bold;
+      }
     }
   }
 

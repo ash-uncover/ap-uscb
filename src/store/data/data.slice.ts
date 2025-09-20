@@ -6,12 +6,44 @@ import { extractModels, MatchData } from '../../lib/model'
 import { DataModel } from './data.state'
 
 // #region Initial State
-const initialState: DataModel = {
-  data: [],
-  dataState: DataStates.NEVER,
-  dataError: '',
 
-  general: {
+function getInitialData() {
+  return {
+    dataFile: '',
+    data: [],
+    dataState: DataStates.NEVER,
+    dataError: '',
+
+    general: {
+      players: 0,
+      matchs: 0,
+      victories: 0,
+      draws: 0,
+      defeats: 0,
+      points: 0,
+      points1: 0,
+      points2i: 0,
+      points2e: 0,
+      points3: 0,
+      fouls: 0,
+      foulsOpponent: 0,
+      playersPerMatch: 0,
+    },
+    matchs: {},
+    players: {}
+  }
+}
+const initialState: DataModel = getInitialData()
+// #endregion
+
+// #region Reducers
+const getDataRequest: CaseReducer<DataModel, PayloadAction<string>> = (state, action) => {
+  state.dataFile = action.payload
+  state.data = []
+  state.dataState = state.dataState === DataStates.NEVER
+    ? DataStates.FETCHING_FIRST
+    : DataStates.FETCHING
+  state.general = {
     players: 0,
     matchs: 0,
     victories: 0,
@@ -26,16 +58,8 @@ const initialState: DataModel = {
     foulsOpponent: 0,
     playersPerMatch: 0,
   },
-  matchs: {},
-  players: {}
-}
-// #endregion
-
-// #region Reducers
-const getDataRequest: CaseReducer<DataModel, PayloadAction<void>> = (state) => {
-  state.dataState = state.dataState === DataStates.NEVER
-    ? DataStates.FETCHING_FIRST
-    : DataStates.FETCHING
+    state.matchs = {}
+  state.players = {}
 }
 interface getDataSuccessPayload {
   data: MatchData[]
@@ -62,6 +86,7 @@ export const DataSlice = createSlice({
   name: 'data',
   initialState,
   reducers: {
+    resetData: () => getInitialData(),
     getDataRequest,
     getDataSuccess,
     getDataFailure

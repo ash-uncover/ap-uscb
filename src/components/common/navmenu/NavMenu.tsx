@@ -14,7 +14,7 @@ export const NavMenu = ({
   items
 }: NavMenuProperties) => {
 
-  // #region Hooks
+  // #region > Hooks
   const [selectedIndex, setSelectedIndex] = useState<number>(0)
   useEffect(() => {
     const index = items.findIndex(i => i.selected)
@@ -29,7 +29,7 @@ export const NavMenu = ({
   // #region Callbacks
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-navmenu']
   if (className) {
     classes.push(className)

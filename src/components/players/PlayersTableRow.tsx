@@ -8,14 +8,14 @@ export const PlayerTableRow = ({
   playerId
 }) => {
 
-  // #region Hooks
+  // #region > Hooks
   const player = useSelector(DataSelectors.player(playerId))
   // #endregion
 
   // #region Callbacks
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-player-table-row']
 
   return (

@@ -12,7 +12,7 @@ export const MatchTablePlayerRow = ({
   playerId
 }) => {
 
-  // #region Hooks
+  // #region > Hooks
   const [player, setPlayer] = useState<PlayerMatchModel>()
   const match = useSelector(DataSelectors.match(matchId))
   const navigate = useNavigateWithParams()
@@ -30,7 +30,7 @@ export const MatchTablePlayerRow = ({
   }
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-match-player-table-row']
 
   if (player) {

@@ -13,7 +13,7 @@ import './Player.css'
 
 export const Player = () => {
 
-  // #region Hooks
+  // #region > Hooks
   const playerId = useParams().playerId
   const player = useSelector(DataSelectors.player(playerId))
   const matchs = useSelector(DataSelectors.matchs)
@@ -28,7 +28,7 @@ export const Player = () => {
   // #region Callbacks
   // #endregion
 
-  // #region Rendering
+  // #region > Render
   const classes = ['ap-player']
   return (
     <div className={classes.join(' ')}>
