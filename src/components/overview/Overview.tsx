@@ -1,6 +1,5 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { NavLink } from 'react-router-dom'
 
 import { PlayerModel } from '../../lib/model'
 import { compareTimes, timeToString } from '../../lib/time'
@@ -9,9 +8,9 @@ import { Tile } from '../common/tile/Tile'
 import { Title } from '../common/title/Title'
 import { TitleLevels } from '../common/title/TitleLevels'
 import { OverviewTable } from './OverviewTable'
+import { NavLinkWithParams } from '../common/navlink/NavLikeWithParams'
 
 import './Overview.css'
-import { NavLinkWithParams } from '../common/navlink/NavLikeWithParams'
 
 export const Overview = () => {
 
