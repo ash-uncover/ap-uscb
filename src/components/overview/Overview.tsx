@@ -11,6 +11,7 @@ import { TitleLevels } from '../common/title/TitleLevels'
 import { OverviewTable } from './OverviewTable'
 
 import './Overview.css'
+import { NavLinkWithParams } from '../common/navlink/NavLikeWithParams'
 
 export const Overview = () => {
 
@@ -41,20 +42,20 @@ export const Overview = () => {
         Stats équipe
       </Title>
       <div className='ap-overview-tiles ap-tiles'>
-        <NavLink to='/matchs'>
+        <NavLinkWithParams to='/matchs'>
           <Tile
             text={`${general.matchs}`}
             desc='Matchs joués'
             icon={['fas', 'basketball']}
           />
-        </NavLink>
-        <NavLink to='/players'>
+        </NavLinkWithParams>
+        <NavLinkWithParams to='/players'>
           <Tile
             text={`${general.players}`}
             desc='Joueurs'
             icon={['fas', 'users']}
           />
-        </NavLink>
+        </NavLinkWithParams>
         <Tile
           text={`${general.points}`}
           desc='Points marqués'
