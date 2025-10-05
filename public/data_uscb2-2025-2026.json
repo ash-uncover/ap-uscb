@@ -129,6 +129,264 @@
           "fouls": 3
         }
       ]
+    }, {
+      "date": "2025/10/05",
+      "score": 41,
+      "scoreOpponent": 46,
+      "opponent": "Le Pecq",
+      "foulsOpponent": 25,
+      "home": true,
+      "players": [
+        {
+          "player": "Vincent G",
+          "time": [
+            17,
+            19
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 2
+        },
+        {
+          "player": "Philippe",
+          "time": [
+            11,
+            57
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 1
+        },
+        {
+          "player": "Vincent B",
+          "time": [
+            35,
+            47
+          ],
+          "points3": 0,
+          "points2i": 3,
+          "points2e": 1,
+          "points1": 3,
+          "fouls": 5
+        },
+        {
+          "player": "Cyriaque",
+          "time": [
+            22,
+            50
+          ],
+          "points3": 0,
+          "points2i": 1,
+          "points2e": 2,
+          "points1": 2,
+          "fouls": 2
+        },
+        {
+          "player": "Karim",
+          "time": [
+            24,
+            38
+          ],
+          "points3": 0,
+          "points2i": 2,
+          "points2e": 2,
+          "points1": 1,
+          "fouls": 5
+        },
+        {
+          "player": "Jean-Baptiste R",
+          "time": [
+            20,
+            26
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 1,
+          "points1": 1,
+          "fouls": 4
+        },
+        {
+          "player": "Jean-Michel",
+          "time": [
+            23,
+            20
+          ],
+          "points3": 0,
+          "points2i": 1,
+          "points2e": 0,
+          "points1": 2,
+          "fouls": 0
+        },
+        {
+          "player": "Jean-Baptiste S",
+          "time": [
+            16,
+            53
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 2
+        },
+        {
+          "player": "Guillaume D",
+          "time": [
+            14,
+            42
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 1
+        },
+        {
+          "player": "Olivier",
+          "time": [
+            16,
+            58
+          ],
+          "points3": 0,
+          "points2i": 1,
+          "points2e": 1,
+          "points1": 2,
+          "fouls": 2
+        }
+      ]
+    }, {
+      "date": "2025/09/28",
+      "score": 45,
+      "scoreOpponent": 71,
+      "opponent": "Maisons Laffite",
+      "foulsOpponent": 23,
+      "home": true,
+      "players": [
+        {
+          "player": "Guillaume R",
+          "time": [
+            16,
+            57
+          ],
+          "points3": 0,
+          "points2i": 1,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 1
+        },
+        {
+          "player": "Bernard",
+          "time": [
+            0,
+            0
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 0
+        },
+        {
+          "player": "Philippe",
+          "time": [
+            32,
+            20
+          ],
+          "points3": 0,
+          "points2i": 4,
+          "points2e": 0,
+          "points1": 4,
+          "fouls": 1
+        },
+        {
+          "player": "Fabien",
+          "time": [
+            19,
+            17
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 3
+        },
+        {
+          "player": "Cyriaque",
+          "time": [
+            30,
+            8
+          ],
+          "points3": 0,
+          "points2i": 1,
+          "points2e": 0,
+          "points1": 2,
+          "fouls": 3
+        },
+        {
+          "player": "Karim",
+          "time": [
+            22,
+            30
+          ],
+          "points3": 0,
+          "points2i": 3,
+          "points2e": 0,
+          "points1": 2,
+          "fouls": 2
+        },
+        {
+          "player": "Jean-Baptiste R",
+          "time": [
+            22,
+            39
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 2,
+          "points1": 0,
+          "fouls": 2
+        },
+        {
+          "player": "Jean-Michel",
+          "time": [
+            15,
+            0
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 3,
+          "fouls": 0
+        },
+        {
+          "player": "Jean-Baptiste S",
+          "time": [
+            21,
+            43
+          ],
+          "points3": 0,
+          "points2i": 1,
+          "points2e": 2,
+          "points1": 0,
+          "fouls": 2
+        },
+        {
+          "player": "Olivier",
+          "time": [
+            19,
+            26
+          ],
+          "points3": 0,
+          "points2i": 2,
+          "points2e": 0,
+          "points1": 2,
+          "fouls": 3
+        }
+      ]
     }
   ]
 }
