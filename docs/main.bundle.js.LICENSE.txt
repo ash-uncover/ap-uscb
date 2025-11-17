@@ -1,5 +1,5 @@
 /*!
- * Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com
+ * Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  * Copyright 2025 Fonticons, Inc.
  */
@@ -17,6 +17,16 @@
 /**
  * @license React
  * react-dom.production.js
+ *
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * react-jsx-runtime.production.js
  *
  * Copyright (c) Meta Platforms, Inc. and affiliates.
  *
@@ -55,7 +65,7 @@
  */
 
 /**
- * react-router v7.9.1
+ * react-router v7.9.6
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -66,7 +76,7 @@
  */
 
 /**
- * react-router-dom v7.9.1
+ * react-router-dom v7.9.6
  *
  * Copyright (c) Remix Software Inc.
  *

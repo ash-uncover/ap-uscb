@@ -62,7 +62,8 @@ const getDataRequest: CaseReducer<DataModel, PayloadAction<string>> = (state, ac
   state.players = {}
 }
 interface getDataSuccessPayload {
-  data: MatchData[]
+  data: MatchData[],
+  format: number
 }
 const getDataSuccess: CaseReducer<DataModel, PayloadAction<getDataSuccessPayload>> = (state, action) => {
   state.dataState = DataStates.SUCCESS
@@ -71,7 +72,7 @@ const getDataSuccess: CaseReducer<DataModel, PayloadAction<getDataSuccessPayload
     general,
     matchs,
     players
-  } = extractModels(action.payload.data.filter(matchData => !matchData.ignore))
+  } = extractModels(action.payload.data.filter(matchData => !matchData.ignore), action.payload.format)
   state.general = general
   state.matchs = matchs
   state.players = players

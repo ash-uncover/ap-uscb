@@ -128,7 +128,7 @@ export const getDefaultPlayerModel = (player: string): PlayerModel => {
   }
 }
 
-export const extractModels = (data: MatchData[]): {
+export const extractModels = (data: MatchData[], matchFormat: number = 200): {
   general: GeneralModel,
   matchs: Record<string, MatchModel>,
   players: Record<string, PlayerModel>
@@ -226,9 +226,9 @@ export const extractModels = (data: MatchData[]): {
   Object.values(matchs).forEach(match => {
     const matchTime = addTimes(match.players.map(p => p.time))
     // console.log(match.date, timeToString(matchTime), 'scores check', match.score, match.players.reduce((a, p) => a + p.points1 + p.points2e * 2 + p.points2i * 2 + p.points3 * 3, 0))
-    if (compareTimes([190, 0], matchTime) > 0) {
+    if (compareTimes([matchFormat - 10, 0], matchTime) > 0) {
       // console.log(' >> Les temps de jeu seront mis a jour pour ce match')
-      const missingTime = subTimes([200, 0], matchTime)
+      const missingTime = subTimes([matchFormat, 0], matchTime)
       const totalPlayerPerct = match.players.reduce((acc, player) => {
         return acc + playersTimes[player.player].playPercentage
       }, 0)

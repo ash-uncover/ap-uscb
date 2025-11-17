@@ -4,6 +4,7 @@ import { DataSlice } from '../store/data/data.slice'
 
 export const loadData = async (dispatch: any, file?: string) => {
   const finalFile = DATA.find(d => d.file === file)?.file || DATA[0].file
+  const format = finalFile.includes('u13') ? 170 : 200
   dispatch(DataSlice.actions.getDataRequest(finalFile))
   return Promise.all([
     new Promise<void>((resolve) => setTimeout(() => resolve(), 1000)),
@@ -11,7 +12,10 @@ export const loadData = async (dispatch: any, file?: string) => {
       .then(response => response.json())
   ])
     .then((data: any) => {
-      dispatch(DataSlice.actions.getDataSuccess(data[1]))
+      dispatch(DataSlice.actions.getDataSuccess({
+        ...data[1],
+        format
+      }))
     })
     .catch((error) => {
       dispatch(DataSlice.actions.getDataFailure(error))
