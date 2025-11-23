@@ -589,6 +589,124 @@
           "fouls": 3
         }
       ]
+    },
+    {
+      "date": "2025/11/23",
+      "score": 55,
+      "scoreOpponent": 54,
+      "opponent": "Gargenville",
+      "foulsOpponent": 10,
+      "home": false,
+      "players": [
+        {
+          "player": "Yanis",
+          "time": [
+            7,
+            30
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 0
+        },
+        {
+          "player": "Hugo",
+          "time": [
+            2,
+            49
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 0
+        },
+        {
+          "player": "Elias",
+          "time": [
+            22,
+            59
+          ],
+          "points3": 0,
+          "points2i": 1,
+          "points2e": 0,
+          "points1": 1,
+          "fouls": 4
+        },
+        {
+          "player": "Khalis",
+          "time": [
+            23,
+            18
+          ],
+          "points3": 0,
+          "points2i": 1,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 3
+        },
+        {
+          "player": "Anatole",
+          "time": [
+            16,
+            38
+          ],
+          "points3": 0,
+          "points2i": 2,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 0
+        },
+        {
+          "player": "Sacha",
+          "time": [
+            28,
+            9
+          ],
+          "points3": 0,
+          "points2i": 12,
+          "points2e": 3,
+          "points1": 0,
+          "fouls": 1
+        },
+        {
+          "player": "Elouan",
+          "time": [
+            32,
+            13
+          ],
+          "points3": 0,
+          "points2i": 5,
+          "points2e": 0,
+          "points1": 4,
+          "fouls": 1
+        },
+        {
+          "player": "Theo",
+          "time": [
+            10,
+            49
+          ],
+          "points3": 0,
+          "points2i": 1,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 0
+        },
+        {
+          "player": "Alexandre",
+          "time": [
+            25,
+            35
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 1
+        }
+      ]
     }
   ]
 }
