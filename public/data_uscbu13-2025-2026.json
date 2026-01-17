@@ -943,6 +943,112 @@
           "fouls": 2
         }
       ]
+    },
+    {
+      "date": "2026/01/11",
+      "score": 51,
+      "scoreOpponent": 48,
+      "opponent": "Acheres",
+      "foulsOpponent": 16,
+      "home": true,
+      "players": [
+        {
+          "player": "Jules",
+          "time": [
+            8,
+            48
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 0
+        },
+        {
+          "player": "Yanis",
+          "time": [
+            24,
+            34
+          ],
+          "points3": 0,
+          "points2i": 1,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 2
+        },
+        {
+          "player": "Khalis",
+          "time": [
+            24,
+            4
+          ],
+          "points3": 0,
+          "points2i": 3,
+          "points2e": 1,
+          "points1": 2,
+          "fouls": 1
+        },
+        {
+          "player": "Anatole",
+          "time": [
+            27,
+            18
+          ],
+          "points3": 0,
+          "points2i": 4,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 2
+        },
+        {
+          "player": "Sacha",
+          "time": [
+            28,
+            49
+          ],
+          "points3": 0,
+          "points2i": 4,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 1
+        },
+        {
+          "player": "Elouan",
+          "time": [
+            28,
+            33
+          ],
+          "points3": 0,
+          "points2i": 8,
+          "points2e": 3,
+          "points1": 1,
+          "fouls": 3
+        },
+        {
+          "player": "Theo",
+          "time": [
+            17,
+            11
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 0
+        },
+        {
+          "player": "Alexandre",
+          "time": [
+            3,
+            48
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 0
+        }
+      ]
     }
   ]
 }

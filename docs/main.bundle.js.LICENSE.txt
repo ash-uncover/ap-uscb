@@ -65,7 +65,7 @@
  */
 
 /**
- * react-router v7.9.6
+ * react-router v7.12.0
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -76,7 +76,7 @@
  */
 
 /**
- * react-router-dom v7.9.6
+ * react-router-dom v7.12.0
  *
  * Copyright (c) Remix Software Inc.
  *
