@@ -129,8 +129,7 @@
           "fouls": 4
         }
       ]
-    },
-    {
+    }, {
       "date": "2025/09/27",
       "score": 31,
       "scoreOpponent": 73,
@@ -259,8 +258,7 @@
           "fouls": 4
         }
       ]
-    },
-    {
+    }, {
       "date": "2025/10/11",
       "score": 43,
       "scoreOpponent": 47,
@@ -377,8 +375,7 @@
           "fouls": 1
         }
       ]
-    },
-    {
+    }, {
       "date": "2025/11/08",
       "score": 43,
       "scoreOpponent": 63,
@@ -483,8 +480,7 @@
           "fouls": 5
         }
       ]
-    },
-    {
+    }, {
       "date": "2025/11/15",
       "score": 41,
       "scoreOpponent": 28,
@@ -589,8 +585,7 @@
           "fouls": 3
         }
       ]
-    },
-    {
+    }, {
       "date": "2025/11/23",
       "score": 55,
       "scoreOpponent": 54,
@@ -707,8 +702,7 @@
           "fouls": 1
         }
       ]
-    },
-    {
+    }, {
       "date": "2025/11/30",
       "score": 67,
       "scoreOpponent": 37,
@@ -825,8 +819,7 @@
           "fouls": 1
         }
       ]
-    },
-    {
+    }, {
       "date": "2025/12/06",
       "score": 57,
       "scoreOpponent": 65,
@@ -943,8 +936,7 @@
           "fouls": 2
         }
       ]
-    },
-    {
+    }, {
       "date": "2026/01/11",
       "score": 51,
       "scoreOpponent": 48,
@@ -1047,6 +1039,111 @@
           "points2e": 0,
           "points1": 0,
           "fouls": 0
+        }
+      ]
+    }, {
+      "date": "2026/01/17",
+      "score": 39,
+      "scoreOpponent": 46,
+      "opponent": "Maule",
+      "foulsOpponent": 15,
+      "home": false,
+      "players": [
+        {
+          "player": "Elias",
+          "time": [
+            11,
+            24
+          ],
+          "points3": 0,
+          "points2i": 2,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 3
+        },
+        {
+          "player": "Yanis",
+          "time": [
+            10,
+            53
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 0
+        },
+        {
+          "player": "Khalis",
+          "time": [
+            21,
+            21
+          ],
+          "points3": 0,
+          "points2i": 2,
+          "points2e": 0,
+          "points1": 1,
+          "fouls": 1
+        },
+        {
+          "player": "Anatole",
+          "time": [
+            17,
+            54
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 0
+        },
+        {
+          "player": "Sacha",
+          "time": [
+            22,
+            59
+          ],
+          "points3": 0,
+          "points2i": 9,
+          "points2e": 0,
+          "points1": 2,
+          "fouls": 3
+        },
+        {
+          "player": "Elouan",
+          "time": [
+            23,
+            29
+          ],
+          "points3": 1,
+          "points2i": 3,
+          "points2e": 0,
+          "points1": 3,
+          "fouls": 2
+        },
+        {
+          "player": "Theo",
+          "time": [
+            6,
+            20
+          ],
+          "points3": 0,
+          "points2i": 0,
+          "points2e": 0,
+          "points1": 0,
+          "fouls": 1
+        },
+        {
+          "player": "Alexandre",
+          "time": [
+            7,
+            30
+          ],
+          "points3": 0,
+          "points2i": 1,
+          "points2e": 0,
+          "points1": 3,
+          "fouls": 5
         }
       ]
     }
